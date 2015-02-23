@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C06270A1A9AB3A300A46FFA /* EndNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627091A9AB3A300A46FFA /* EndNode.m */; };
 		2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627101A9AB4E400A46FFA /* Gameplay.m */; };
-		2C0627141A9AE8EA00A46FFA /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627131A9AE8E900A46FFA /* Ball.m */; };
+		2C0627311A9BA12D00A46FFA /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627301A9BA12D00A46FFA /* Grid.m */; };
+		2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627331A9BA1AD00A46FFA /* Orb.m */; };
 		5B121030197484FA004C1E1D /* Match_ShooterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* Match_ShooterActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -156,8 +157,10 @@
 		2C0627091A9AB3A300A46FFA /* EndNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndNode.m; path = Source/EndNode.m; sourceTree = "<group>"; };
 		2C06270F1A9AB4E400A46FFA /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		2C0627101A9AB4E400A46FFA /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
-		2C0627121A9AE8E900A46FFA /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = Source/Ball.h; sourceTree = "<group>"; };
-		2C0627131A9AE8E900A46FFA /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ball.m; path = Source/Ball.m; sourceTree = "<group>"; };
+		2C06272F1A9BA12D00A46FFA /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grid.h; path = Source/Grid.h; sourceTree = "<group>"; };
+		2C0627301A9BA12D00A46FFA /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Grid.m; path = Source/Grid.m; sourceTree = "<group>"; };
+		2C0627321A9BA1AD00A46FFA /* Orb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Orb.h; path = Source/Orb.h; sourceTree = "<group>"; };
+		2C0627331A9BA1AD00A46FFA /* Orb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Orb.m; path = Source/Orb.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -445,6 +448,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2C0627321A9BA1AD00A46FFA /* Orb.h */,
+				2C0627331A9BA1AD00A46FFA /* Orb.m */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
@@ -453,8 +458,8 @@
 				2C0627091A9AB3A300A46FFA /* EndNode.m */,
 				2C06270F1A9AB4E400A46FFA /* Gameplay.h */,
 				2C0627101A9AB4E400A46FFA /* Gameplay.m */,
-				2C0627121A9AE8E900A46FFA /* Ball.h */,
-				2C0627131A9AE8E900A46FFA /* Ball.m */,
+				2C06272F1A9BA12D00A46FFA /* Grid.h */,
+				2C0627301A9BA12D00A46FFA /* Grid.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -833,10 +838,11 @@
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
 				2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */,
-				2C0627141A9AE8EA00A46FFA /* Ball.m in Sources */,
+				2C0627311A9BA12D00A46FFA /* Grid.m in Sources */,
 				2C06270A1A9AB3A300A46FFA /* EndNode.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,7 +906,7 @@
 					"-ObjC",
 					"-lz",
 				);
-				PRODUCT_MODULE_NAME = Match3Shooter;
+				PRODUCT_MODULE_NAME = Match3LoveSim;
 				PRODUCT_NAME = "Match3LoveSim Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
@@ -944,7 +950,7 @@
 					"-ObjC",
 					"-lz",
 				);
-				PRODUCT_MODULE_NAME = Match3Shooter;
+				PRODUCT_MODULE_NAME = Match3LoveSim;
 				PRODUCT_NAME = "Match3LoveSim Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
@@ -992,7 +998,7 @@
 					"-lgles_apportable",
 					"-landroid",
 				);
-				PRODUCT_MODULE_NAME = Match3Shooter;
+				PRODUCT_MODULE_NAME = Match3LoveSim;
 				PRODUCT_NAME = "Match3LoveSim Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
@@ -1040,7 +1046,7 @@
 					"-lgles_apportable",
 					"-landroid",
 				);
-				PRODUCT_MODULE_NAME = Match3Shooter;
+				PRODUCT_MODULE_NAME = Match3LoveSim;
 				PRODUCT_NAME = "Match3LoveSim Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;

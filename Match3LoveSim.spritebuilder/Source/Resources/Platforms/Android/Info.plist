@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Match3Shooter</string>
+	<string>Match3LoveSim</string>
 	<key>CFBundleExecutable</key>
-	<string>Match_Shooter</string>
+	<string>Match3LoveSim</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.cocos2d.Match_Shooter</string>
+	<string>org.cocos2d.Match3_LoveSim</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Match_Shooter</string>
+	<string>Match3_LoveSim</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>

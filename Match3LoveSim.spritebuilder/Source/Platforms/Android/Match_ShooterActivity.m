@@ -23,11 +23,11 @@
  */
 
 
-#import "Match_ShooterActivity.h"
+#import "Match3_LoveSimActivity.h"
 
 #import <AndroidKit/AndroidKeyEvent.h>
 
-@implementation Match_ShooterActivity
+@implementation Match3_LoveSimActivity
 
 - (CCScene *)startScene
 {

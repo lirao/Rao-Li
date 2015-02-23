@@ -26,6 +26,6 @@
 #import "CCActivity.h"
 
 BRIDGE_CLASS("com.apportable.GLActivity")
-@interface Match_ShooterActivity : CCActivity
+@interface Match3_LoveSimActivity : CCActivity
 
 @end
