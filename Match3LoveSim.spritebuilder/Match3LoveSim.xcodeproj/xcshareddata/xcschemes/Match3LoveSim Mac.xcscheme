@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "927F6198196C771E000F43EF"
-               BuildableName = "Match3Shooter Android.app"
-               BlueprintName = "Match3Shooter Android"
-               ReferencedContainer = "container:Match3Shooter.xcodeproj">
+               BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
+               BuildableName = "Match3LoveSim Mac.app"
+               BlueprintName = "Match3LoveSim Mac"
+               ReferencedContainer = "container:Match3LoveSim.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "Match3Shooter Android.app"
-            BlueprintName = "Match3Shooter Android"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
+            BuildableName = "Match3LoveSim Mac.app"
+            BlueprintName = "Match3LoveSim Mac"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "Match3Shooter Android.app"
-            BlueprintName = "Match3Shooter Android"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
+            BuildableName = "Match3LoveSim Mac.app"
+            BlueprintName = "Match3LoveSim Mac"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "927F6198196C771E000F43EF"
-            BuildableName = "Match3Shooter Android.app"
-            BlueprintName = "Match3Shooter Android"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
+            BuildableName = "Match3LoveSim Mac.app"
+            BlueprintName = "Match3LoveSim Mac"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

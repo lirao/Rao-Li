@@ -90,6 +90,13 @@
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
+		<key>Assets/object_coloful-mushrooms</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Assets/object_game-power-ups</key>
 		<dict>
 			<key>isDirty</key>

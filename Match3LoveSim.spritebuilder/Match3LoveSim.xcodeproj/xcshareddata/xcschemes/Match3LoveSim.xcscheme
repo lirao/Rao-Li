@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
                BuildableName = "Match3Shooter.app"
-               BlueprintName = "Match3Shooter iOS"
-               ReferencedContainer = "container:Match3Shooter.xcodeproj">
+               BlueprintName = "Match3LoveSim iOS"
+               ReferencedContainer = "container:Match3LoveSim.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "Match3Shooter.app"
-            BlueprintName = "Match3Shooter iOS"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintName = "Match3LoveSim iOS"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "Match3Shooter.app"
-            BlueprintName = "Match3Shooter iOS"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintName = "Match3LoveSim iOS"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "Match3Shooter.app"
-            BlueprintName = "Match3Shooter iOS"
-            ReferencedContainer = "container:Match3Shooter.xcodeproj">
+            BlueprintName = "Match3LoveSim iOS"
+            ReferencedContainer = "container:Match3LoveSim.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
