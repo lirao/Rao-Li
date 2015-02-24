@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign) int life;
 @property (nonatomic, assign) int affection;
-
+//@property (nonatomic, assign) float cellWidth;
+//@property (nonatomic, assign) float cellHeight;
 
 @end

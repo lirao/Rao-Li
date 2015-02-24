@@ -7,8 +7,11 @@
 //
 
 #import "Orb.h"
+#import "Grid.h"
 
-static int MAX_COLOR = 6;
+//Stores the _cellHeight and cellWidth
+static int MAX_X=64;
+static int MAX_Y=64;
 
 @implementation Orb {
 }
@@ -53,9 +56,20 @@ static int MAX_COLOR = 6;
     if (self) {
         self.orbColor = color;
         self.zOrder = 9;
+		self.anchorPoint = ccp(0, 0);
+
+		self.scaleX = MAX_X / self.contentSize.width;
+		self.scaleY = MAX_Y / self.contentSize.height;
+
     }
 
     return self;
 }
+
++ (void) setHeight:(int)value { MAX_Y = value; }
+
++ (void) setWidth:(int)value { MAX_X = value; }
+
+
 
 @end

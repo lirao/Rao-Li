@@ -8,6 +8,7 @@
 
 #import "CCSprite.h"
 
+
 typedef NS_ENUM(NSInteger, MyValue) {
 	RED = 0,
 	ORANGE,
@@ -24,5 +25,9 @@ typedef NS_ENUM(NSInteger, MyValue) {
 
 - (instancetype)initOrb;
 - (instancetype)initWithColor:(MyValue)color;
+
++ (void) setHeight:(int)value;
++ (void) setWidth:(int)value;
+
 
 @end

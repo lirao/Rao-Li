@@ -67,12 +67,11 @@ static const int GRID_COLUMNS = 6;
         x = 0;
         for (int j = 0; j < GRID_COLUMNS; j++) {
             Orb* orb = [[Orb alloc] initOrb];
-            orb.anchorPoint = ccp(0, 0);
             orb.position = ccp(x, y);
             [self addChild:orb];
 
             // this is shorthand to access an array inside an array
-            int index = [self resolveIndexOfX:j AndY:i];
+            int index = i * GRID_COLUMNS + j;
             _gridArray[index] = orb;
 
             // make creatures visible to test this method, remove this once we know we
@@ -85,45 +84,35 @@ static const int GRID_COLUMNS = 6;
     }
 }
 
-- (int)resolveIndexOfX:(int)x AndY:(int)y
-{
-	// x is horizontal axis (column
-	// y is vertical axis (row
-
-    return (x * GRID_COLUMNS + y);
-}
-
 - (void)touchBegan:(CCTouch*)touch withEvent:(CCTouchEvent*)event
 {
-	if (self.userInteractionEnabled)
+    if (self.userInteractionEnabled)
 
-	{
-    //get the x,y coordinates of the touch
-    CGPoint touchLocation = [touch locationInNode:self];
+    {
+        //get the x,y coordinates of the touch
+        CGPoint touchLocation = [touch locationInNode:self];
 
-    //get the Creature at that location
-   // Orb* orb = [self orbForTouchPosition:touchLocation];
+        //get the Creature at that location
+        // Orb* orb = [self orbForTouchPosition:touchLocation];
 
-	//NSLog(@"%@", _gems);
+        //NSLog(@"%@", _gems);
 
-	for (Orb * container in _gridArray)
-	{
-		if (!_dragOrb && CGRectContainsPoint(container.boundingBox, touchLocation))
-		{
-			//Clone the starting orb to create a ghost orb dragged
-			_dragOrb = [[Orb alloc] initWithColor:container.orbColor];
-			_dragOrb.color = container.color;
-			[_dragOrb setPosition:container.position];
+        for (Orb* container in _gridArray) {
+            if (!_dragOrb && CGRectContainsPoint(container.boundingBox, touchLocation)) {
+                //Clone the starting orb to create a ghost orb dragged
+                _dragOrb = [[Orb alloc] initWithColor:container.orbColor];
+                _dragOrb.orbColor = container.orbColor;
+                [_dragOrb setPosition:container.position];
 
-			[self addChild:_dragOrb];
-			_realDragOrb = container;
-			container.opacity = 128;
-			_dragOffset = CGPointMake(touchLocation.x-container.boundingBox.origin.x-26.5, touchLocation.y-container.boundingBox.origin.y-26.5);
-			_dragOrb.zOrder = 10;
-			return ;
-		}
-	}
-
+                [self addChild:_dragOrb];
+                _realDragOrb = container;
+                container.opacity = 128;
+                _dragOffset = CGPointMake(touchLocation.x - container.boundingBox.origin.x - _cellWidth / 2, touchLocation.y - container.boundingBox.origin.y - _cellHeight / 2);
+                _dragOrb.zOrder = 10;
+                return;
+            }
+        }
+    }
 }
 
 //- (Orb*)orbForTouchPosition:(CGPoint)touchPosition
@@ -147,7 +136,7 @@ static const int GRID_COLUMNS = 6;
         [_clearStrip addObject:orb];
         int newIndex = index - GRID_COLUMNS; // y+1
         Orb* newOrb = _gridArray[newIndex];
-        if (newOrb.color == orb.color) {
+        if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:newOrb];
             NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesAboveOrb:newOrb index:newIndex];
@@ -164,7 +153,7 @@ static const int GRID_COLUMNS = 6;
         [_clearStrip addObject:orb];
         int newIndex = index + GRID_COLUMNS; //y-1
         Orb* newOrb = _gridArray[newIndex];
-        if (newOrb.color == orb.color) {
+        if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
             NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesBelowOrb:newOrb index:newIndex];
@@ -181,7 +170,7 @@ static const int GRID_COLUMNS = 6;
         [_clearStrip addObject:orb];
         int newIndex = index - 1; //x-1
         Orb* newOrb = _gridArray[newIndex];
-        if (newOrb.color == orb.color) {
+        if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
             NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesLeftOrb:newOrb index:newIndex];
@@ -192,13 +181,13 @@ static const int GRID_COLUMNS = 6;
 - (void)findMatchesRightOrb:(Orb*)orb index:(int)index
 {
     int x = index % GRID_COLUMNS;
-    if (x == GRID_COLUMNS)
+    if (x == GRID_COLUMNS - 1)
         return;
     else {
         [_clearStrip addObject:orb];
         int newIndex = index + 1; //x+1
         Orb* newOrb = _gridArray[newIndex];
-        if (newOrb.color == orb.color) {
+        if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
             NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesRightOrb:newOrb index:newIndex];
@@ -235,19 +224,19 @@ static const int GRID_COLUMNS = 6;
 {
     // slide down
     NSMutableSet* used = [NSMutableSet set];
-    for (int column = 0; column < GRID_COLUMNS; column++) {
-        for (int row = 0; row < GRID_ROWS; row++) {
-            int thisIndex = (row * GRID_COLUMNS) + column;
-            Orb* thisOrb = _gridArray[thisIndex];
+    for (int i = 0; i < GRID_ROWS; i++) {
+        for (int j = 0; j < GRID_COLUMNS; j++) {
+            int index = i * GRID_COLUMNS + j;
+            Orb* thisOrb = _gridArray[index];
 
             //NSLog(@"testing this %d, %d, %d", thisIndex, row, column);
-            for (int newRow = row; newRow < GRID_ROWS; newRow++) {
-                int newIndex = [self resolveIndexOfX:column AndY:newRow];
+            for (int newRow = j; newRow < GRID_ROWS; newRow++) {
+                int newIndex = newRow * GRID_COLUMNS + i;
                 Orb* newOrb = _gridArray[newIndex];
                 if (![_clearBlk containsObject:newOrb] && ![used containsObject:newOrb]) {
                     //NSLog(@"replace %d with %d", thisIndex, newIndex);
                     [used addObject:newOrb];
-                    [_gridArray replaceObjectAtIndex:thisIndex withObject:newOrb];
+                    [_gridArray replaceObjectAtIndex:index withObject:newOrb];
                     [_gridArray replaceObjectAtIndex:newIndex withObject:thisOrb];
                     break;
                 }
@@ -259,7 +248,7 @@ static const int GRID_COLUMNS = 6;
         int index = (int)[_gridArray indexOfObject:orb];
         int x = index % GRID_COLUMNS;
         Orb* newOrb = [[Orb alloc] initOrb];
-        newOrb.position = CGPointMake(27.5 + (x * 53), 290.5);
+        newOrb.position = ccp(x * _cellWidth, (GRID_ROWS - 1) * _cellHeight);
         [self addChild:newOrb];
         [_gridArray replaceObjectAtIndex:index withObject:newOrb];
         [self removeChild:orb];
@@ -269,21 +258,24 @@ static const int GRID_COLUMNS = 6;
 
 - (void)updateOrbPositionsAfterSwap:(float)duration
 {
-	float startY = 0;
-	float startX = 0;
+    float x = 0;
+    float y = 0;
 
-    for (int y = 0; y < GRID_ROWS; y++) {
-		startX = 0;
-        for (int x = 0; x < GRID_COLUMNS; x++) {
-            int idx = x + (y * GRID_COLUMNS);
-            Orb* container = _gridArray[idx];
-            if (container.position.x != startX || container.position.y != startY) {
-                CCActionMoveTo* moveTo = [[CCActionMoveTo alloc] initWithDuration:duration position:ccp(startX, startY)];
+    // fix orbs order
+    for (int i = 0; i < GRID_ROWS; i++) {
+        x = 0;
+        for (int j = 0; j < GRID_COLUMNS; j++) {
+            int index = i * GRID_COLUMNS + j;
+            Orb* container = _gridArray[index];
+            if (container.position.x != x || container.position.y != y) {
+                CCActionMoveTo* moveTo =
+                    [[CCActionMoveTo alloc] initWithDuration:duration position:ccp(x, y)];
                 [container runAction:moveTo];
             }
-            startX += _cellWidth;
+
+            x += _cellWidth;
         }
-        startY += _cellHeight;
+        y += _cellHeight;
     }
 }
 
@@ -291,7 +283,9 @@ static const int GRID_COLUMNS = 6;
 {
     if (batches.count == 0)
         return;
+
     NSMutableArray* batch = [batches lastObject];
+    _affection += batch.count;
 
     for (Orb* orb in batch) {
         CCActionFadeOut* fadeOut = [[CCActionFadeOut alloc] initWithDuration:0.25];
@@ -335,8 +329,9 @@ static const int GRID_COLUMNS = 6;
 - (void)turnEnd
 {
     self.userInteractionEnabled = NO;
+
     [_clearBlk removeAllObjects];
-    for (int i = 29; i >= 0; i--) {
+    for (int i = 0; i < GRID_COLUMNS * GRID_ROWS; i++) {
         [self findRunFromOrb:_gridArray[i] index:i];
     }
     if (_clearBlk.count > 0) {
@@ -360,6 +355,40 @@ static const int GRID_COLUMNS = 6;
     else {
         self.userInteractionEnabled = YES;
     }
+}
+
+- (void)touchMoved:(CCTouch*)touch withEvent:(CCTouchEvent*)event
+{
+    if (!self.userInteractionEnabled)
+        return;
+
+    if (_dragOrb) {
+        CGPoint location = [touch locationInNode:self];
+        location.x -= _dragOffset.x;
+        location.y -= _dragOffset.y;
+        [_dragOrb setPosition:location];
+        Orb* swapOrb = nil;
+        for (Orb* container in _gridArray) {
+            if (container != _realDragOrb && container.numberOfRunningActions == 0 && CGRectContainsPoint(container.boundingBox, location)) {
+                swapOrb = container;
+                break;
+            }
+        }
+        if (swapOrb) {
+            int idxA = (int)[_gridArray indexOfObject:swapOrb];
+            int idxB = (int)[_gridArray indexOfObject:_realDragOrb];
+            [_gridArray replaceObjectAtIndex:idxA withObject:_realDragOrb];
+            [_gridArray replaceObjectAtIndex:idxB withObject:swapOrb];
+            [self updateOrbPositionsAfterSwap:0.05];
+        }
+        //Minus 1 life for every drag event fired
+        _life--;
+    }
+}
+
+- (void)touchCancelled:(CCTouch*)touch withEvent:(CCTouchEvent*)event
+{
+    [self touchEnded:touch withEvent:event];
 }
 
 @end
