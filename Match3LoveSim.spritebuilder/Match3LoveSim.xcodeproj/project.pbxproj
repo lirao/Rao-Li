@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C06270A1A9AB3A300A46FFA /* EndNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627091A9AB3A300A46FFA /* EndNode.m */; };
 		2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627101A9AB4E400A46FFA /* Gameplay.m */; };
 		2C0627311A9BA12D00A46FFA /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627301A9BA12D00A46FFA /* Grid.m */; };
 		2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627331A9BA1AD00A46FFA /* Orb.m */; };
+		2C0627371A9BE5FC00A46FFA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627361A9BE5FC00A46FFA /* Level.m */; };
 		5B121030197484FA004C1E1D /* Match_ShooterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* Match_ShooterActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -153,14 +153,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C0627081A9AB3A300A46FFA /* EndNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndNode.h; path = Source/EndNode.h; sourceTree = "<group>"; };
-		2C0627091A9AB3A300A46FFA /* EndNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndNode.m; path = Source/EndNode.m; sourceTree = "<group>"; };
 		2C06270F1A9AB4E400A46FFA /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
 		2C0627101A9AB4E400A46FFA /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Gameplay.m; sourceTree = "<group>"; };
 		2C06272F1A9BA12D00A46FFA /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grid.h; path = Source/Grid.h; sourceTree = "<group>"; };
 		2C0627301A9BA12D00A46FFA /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Grid.m; path = Source/Grid.m; sourceTree = "<group>"; };
 		2C0627321A9BA1AD00A46FFA /* Orb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Orb.h; path = Source/Orb.h; sourceTree = "<group>"; };
 		2C0627331A9BA1AD00A46FFA /* Orb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Orb.m; path = Source/Orb.m; sourceTree = "<group>"; };
+		2C0627351A9BE5FC00A46FFA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
+		2C0627361A9BE5FC00A46FFA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -454,12 +454,12 @@
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
-				2C0627081A9AB3A300A46FFA /* EndNode.h */,
-				2C0627091A9AB3A300A46FFA /* EndNode.m */,
 				2C06270F1A9AB4E400A46FFA /* Gameplay.h */,
 				2C0627101A9AB4E400A46FFA /* Gameplay.m */,
 				2C06272F1A9BA12D00A46FFA /* Grid.h */,
 				2C0627301A9BA12D00A46FFA /* Grid.m */,
+				2C0627351A9BE5FC00A46FFA /* Level.h */,
+				2C0627361A9BE5FC00A46FFA /* Level.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -839,9 +839,9 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */,
 				2C0627311A9BA12D00A46FFA /* Grid.m in Sources */,
-				2C06270A1A9AB3A300A46FFA /* EndNode.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				2C0627371A9BE5FC00A46FFA /* Level.m in Sources */,
 				2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

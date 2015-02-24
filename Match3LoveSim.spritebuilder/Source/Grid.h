@@ -13,8 +13,8 @@
 @property (nonatomic, assign) int life;
 @property (nonatomic, assign) int affection;
 
-- (void) clearOrb;
-- (void) countNeighbors;
-- (void) updateCreatures;
+//- (void) clearOrb;
+//- (void) countNeighbors;
+//- (void) updateCreatures;
 
 @end

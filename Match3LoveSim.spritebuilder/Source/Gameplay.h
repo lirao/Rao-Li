@@ -8,6 +8,10 @@
 
 #import "CCNode.h"
 
+
 @interface Gameplay : CCNode
+
+@property (nonatomic, assign) int life;
+@property (nonatomic, assign) int affection;
 
 @end

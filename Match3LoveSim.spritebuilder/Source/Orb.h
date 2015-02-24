@@ -8,6 +8,19 @@
 
 #import "CCSprite.h"
 
+typedef NS_ENUM(NSInteger, MyValue) {
+	RED = 0,
+	ORANGE,
+	YELLOW,
+	GREEN,
+	BLUE,
+	PURPLE
+};
+
 @interface Orb : CCSprite
+
+@property (nonatomic, readwrite) MyValue orbColor;
+
+- (instancetype)initOrb;
 
 @end
