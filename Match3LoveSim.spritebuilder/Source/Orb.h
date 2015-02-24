@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger, MyValue) {
 	YELLOW,
 	GREEN,
 	BLUE,
-	PURPLE
+	PURPLE,
+	color_count
 };
 
 @interface Orb : CCSprite
@@ -22,5 +23,6 @@ typedef NS_ENUM(NSInteger, MyValue) {
 @property (nonatomic, readwrite) MyValue orbColor;
 
 - (instancetype)initOrb;
+- (instancetype)initWithColor:(MyValue)color;
 
 @end
