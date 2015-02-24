@@ -224,9 +224,9 @@ static const int GRID_COLUMNS = 6;
 {
     // slide down
     NSMutableSet* used = [NSMutableSet set];
-    for (int i = 0; i < GRID_ROWS; i++) {
-        for (int j = 0; j < GRID_COLUMNS; j++) {
-            int index = i * GRID_COLUMNS + j;
+    for (int i = 0; i < GRID_COLUMNS; i++) {
+        for (int j = 0; j < GRID_ROWS; j++) {
+            int index = j * GRID_COLUMNS + i;
             Orb* thisOrb = _gridArray[index];
 
             //NSLog(@"testing this %d, %d, %d", thisIndex, row, column);
@@ -243,12 +243,13 @@ static const int GRID_COLUMNS = 6;
             }
         }
     }
-    // fill spaces
+    //
     for (Orb* orb in _clearBlk) {
         int index = (int)[_gridArray indexOfObject:orb];
         int x = index % GRID_COLUMNS;
+		int y = index / GRID_COLUMNS;
         Orb* newOrb = [[Orb alloc] initOrb];
-        newOrb.position = ccp(x * _cellWidth, (GRID_ROWS - 1) * _cellHeight);
+        newOrb.position = ccp(x * _cellWidth, (GRID_ROWS+y) * _cellHeight);
         [self addChild:newOrb];
         [_gridArray replaceObjectAtIndex:index withObject:newOrb];
         [self removeChild:orb];

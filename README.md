@@ -66,6 +66,11 @@ tsundere slime and megane slime
     * AffectionBar
     * IAP items
 
+## Credits
+* Core gameplay mechanics implemented by following tutorial from [here](http://www.200monkeys.com/index.php/2012/12/23/cloning-puzzle-and-dragons/) 
+* Art Assets 
+	* [GameArtForge](http://opengameart.org/users/gameartforge)
+	* [Kenny](http://kenney.nl/)
 
 ## MVP Milestones
 ### Week 1 (2/18 - 2/24/2015) _finishing the playable build_
