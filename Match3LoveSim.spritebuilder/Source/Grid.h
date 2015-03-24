@@ -14,5 +14,6 @@
 @property (nonatomic, assign) int affection;
 //@property (nonatomic, assign) float cellWidth;
 //@property (nonatomic, assign) float cellHeight;
+@property (nonatomic, strong) Gameplay* gamePlay;
 
 @end

@@ -11,6 +11,9 @@
 		2C0627311A9BA12D00A46FFA /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627301A9BA12D00A46FFA /* Grid.m */; };
 		2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627331A9BA1AD00A46FFA /* Orb.m */; };
 		2C0627371A9BE5FC00A46FFA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627361A9BE5FC00A46FFA /* Level.m */; };
+		2CC3B3F51AA6782C00738719 /* tamhe01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */; };
+		2CC3B3F71AA678B900738719 /* tampi05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F61AA678B800738719 /* tampi05.mp3 */; };
+		2CC3B3FB1AA67A8600738719 /* icedown2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3FA1AA67A8600738719 /* icedown2.mp3 */; };
 		5B121030197484FA004C1E1D /* Match_ShooterActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* Match_ShooterActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -161,6 +164,9 @@
 		2C0627331A9BA1AD00A46FFA /* Orb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Orb.m; path = Source/Orb.m; sourceTree = "<group>"; };
 		2C0627351A9BE5FC00A46FFA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		2C0627361A9BE5FC00A46FFA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
+		2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tamhe01.mp3; sourceTree = "<group>"; };
+		2CC3B3F61AA678B800738719 /* tampi05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tampi05.mp3; sourceTree = "<group>"; };
+		2CC3B3FA1AA67A8600738719 /* icedown2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = icedown2.mp3; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -285,6 +291,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CC3B3F31AA6782C00738719 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2CC3B3FA1AA67A8600738719 /* icedown2.mp3 */,
+				2CC3B3F61AA678B800738719 /* tampi05.mp3 */,
+				2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		5B12100D197483EE004C1E1D /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +554,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CC3B3F31AA6782C00738719 /* Audio */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -753,9 +770,12 @@
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
+				2CC3B3F71AA678B900738719 /* tampi05.mp3 in Resources */,
+				2CC3B3FB1AA67A8600738719 /* icedown2.mp3 in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
+				2CC3B3F51AA6782C00738719 /* tamhe01.mp3 in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,

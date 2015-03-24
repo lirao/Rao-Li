@@ -51,6 +51,13 @@
     //become own physics delegate
 //    _physicsNode.collisionDelegate = self;
 
+	// access audio object
+	OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+	// play bgm
+	[audio playBg:@"/Resources/Audio/tampi05.mp3" loop:YES];
+	//Preload sfx
+	[audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
+
 }
 - (void)update:(CCTime)delta {
 

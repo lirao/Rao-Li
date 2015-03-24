@@ -23,9 +23,6 @@ Sliding movement consumes food gauge. If it hits 0, game over.
 
 Block of 3 or more clear and have an effect based on "level"
 
-
-
-
 ### Level Design
 Each "level" is a different pair of (gender neutral) slimes. Each pair has different effects in diff orbs, e.g. otaku slime like the sword/cosplay orbs, heal slime like the heal orbs (metal slimes eat sword)
  
@@ -71,22 +68,35 @@ tsundere slime and megane slime
 * Art Assets 
 	* [GameArtForge](http://opengameart.org/users/gameartforge)
 	* [Kenny](http://kenney.nl/)
+* Audio Assets
+	* TAM Music Factory
+
+## Features List
+* Achievements e.g. go to movies 10 times -> 100 times
+* Episode changes based on behavior,  clear different blocks means different behavior, bad ending may occur
+
 
 ## MVP Milestones
-### Week 1 (2/18 - 2/24/2015) _finishing the playable build_
-* Implement the match 3 (following online example)
+### Week 1 (3/17 - 3/23/2015) _finishing the playable build_
+* Secure basic art assets
   * Scoring code and panel
 
-### Week 2 (2/25 - 3/3/2015) - _finishing a better playable build_
-* Implement 
+### Week 2 (3/24 - 3/30/2015) - _finishing a better playable build_
+* Implement more levels
+* Write some episodes
 
-### Week 3 (3/3 - 3/10/2014)
-* Finish and polish rewind implementation
+### Week 3 (3/31 - 4/6/2014)
+* Add episode 1 to the core game
 
+### Week 4 (4/7 - 4/13/2014) - _finishing core gameplay_
+* add more episodes
 
-### Week 4 (7/28 - 8/1/2014) - _finishing core gameplay_
+### Week 5 (4/14 - 4/20/2014)
+* Refine levels and episodes 
+* More playtests
 
+### Week 6 (4/21 - 4/27/2014) - _finishing the polish_
+* Polish game
 
-### Week 5 (8/4 - 8/8/2014)
-
-### Week 6 (8/11 - 8/15/2014) - _finishing the polish_
+### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
+*  Write game description, make poster
