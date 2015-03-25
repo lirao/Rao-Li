@@ -7,13 +7,12 @@
 //
 
 #import "CCNode.h"
+#import "Gameplay.h"
 
 @interface Grid : CCNode
 
 @property (nonatomic, assign) int life;
 @property (nonatomic, assign) int affection;
-//@property (nonatomic, assign) float cellWidth;
-//@property (nonatomic, assign) float cellHeight;
 @property (nonatomic, strong) Gameplay* gamePlay;
 
 @end
