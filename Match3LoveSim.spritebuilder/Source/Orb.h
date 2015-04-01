@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, MyValue) {
 
 - (instancetype)initOrb;
 - (instancetype)initWithColor:(MyValue)color;
+- (BOOL)isOverlap:(Orb*)anotherOrb;
 
 + (void) setHeight:(int)value;
 + (void) setWidth:(int)value;

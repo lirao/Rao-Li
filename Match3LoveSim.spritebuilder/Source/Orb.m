@@ -70,6 +70,14 @@ static int MAX_Y=64;
 
 + (void) setWidth:(int)value { MAX_X = value; }
 
-
+- (BOOL)isOverlap:(Orb*)anotherOrb
+{
+//	//Check if they are actually intersecting with standard function
+//	if (CGRectIntersectsRect([self.boundingBox.origin],[anotherOrb.boundingbox]) {
+//		return YES;
+//	}
+//		else
+//		return NO;
+}
 
 @end
