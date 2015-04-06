@@ -22,9 +22,11 @@ typedef NS_ENUM(NSInteger, MyValue) {
 @interface Orb : CCSprite
 
 @property (nonatomic, readwrite) MyValue orbColor;
+@property (nonatomic, readwrite) BOOL changed;
 
 - (instancetype)initOrb;
 - (instancetype)initWithColor:(MyValue)color;
+- (void)setColor:(MyValue)color;
 - (BOOL)isOverlap:(Orb*)anotherOrb;
 
 + (void) setHeight:(int)value;
