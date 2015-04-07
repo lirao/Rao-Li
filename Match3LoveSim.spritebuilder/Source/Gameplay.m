@@ -35,30 +35,14 @@
 // is called when CCB file has completed loading
 - (void)didLoadFromCCB
 {
-//    // tell this scene to accept touches
-//    self.userInteractionEnabled = TRUE;
-//    //Load test
-//    CCScene* level = [CCBReader loadAsScene:@"Levels/TestLevel"];
-//    [_levelNode addChild:level];
-
-    // nothing shall collide with our invisible nodes
-    //	_pullbackNode.physicsBody.collisionMask = @[];
-    //	_mouseJointNode.physicsBody.collisionMask = @[];
-
-    // visualize physics bodies & joints
-    //_physicsNode.debugDraw = TRUE;
-
-    //become own physics delegate
-//    _physicsNode.collisionDelegate = self;
-
 	// access audio object
 	OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
 	// play bgm
 	[audio playBg:@"/Resources/Audio/tampi05.mp3" loop:YES];
 	//Preload sfx
 	[audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
-
 }
+
 - (void)update:(CCTime)delta {
 
 	_lifeLabel.string = [NSString stringWithFormat:@"%d", _grid.life];

@@ -10,19 +10,13 @@ For Mobile Game Development Class
 * Vice versa
 
 ### Gameplay Mechanics
-
-
-
-
-### Level Design
-
-
-## Technical
-### Scenes
-
 ### Controls/Input
 
 ### Classes/CCBs
+MainScene
+WhiteCompass
+BlackCompass
+Arrow
 
 ## Credits
 * Art Assets 
@@ -38,15 +32,23 @@ For Mobile Game Development Class
 
 ## MVP Milestones
 ### Week 1 (3/17 - 3/23/2015) _finishing the playable build_
-* Find more images to add
-  * Alternate pictures for directions, compass, and arrow
-* Add new images
-
+* Plan:
+    * Find more images to add
+    * Alternate pictures for directions, compass, and arrow
+    * Add new images
+* Completed:
+    * Found some images for background 
 ### Week 2 (3/24 - 3/30/2015) - _finishing a better playable build_
-* Implement level design
+* Plan:
+    * Implement level design
+    * Add the background image, add scenario for the game (someone lost his way)
+* Completed
+    * Add scoreboard
 
 ### Week 3 (3/31 - 4/6/2014)
-* Fix game level bugs
+* Plan
+    * Add time limit
+    * Fix direction bug
 
 
 ### Week 4 (4/7 - 4/13/2014) - _finishing core gameplay_

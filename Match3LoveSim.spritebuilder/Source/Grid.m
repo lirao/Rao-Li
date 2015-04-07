@@ -246,9 +246,7 @@ static const int GRID_COLUMNS = 6;
         }
         y += _cellHeight;
     }
-	
 }
-
 
 - (void)processBatches:(NSMutableArray*)batches
 {
@@ -285,9 +283,7 @@ static const int GRID_COLUMNS = 6;
 
 - (void)touchBegan:(CCTouch*)touch withEvent:(CCTouchEvent*)event
 {
-    if (self.userInteractionEnabled)
-
-    {
+    if (self.userInteractionEnabled) {
         //get the x,y coordinates of the touch
         CGPoint touchLocation = [touch locationInNode:self];
 
@@ -299,7 +295,7 @@ static const int GRID_COLUMNS = 6;
                 //Clone the starting orb to create a ghost orb dragged
                 _dragOrb = [[Orb alloc] initWithColor:currOrb.orbColor];
                 [_dragOrb setPosition:currOrb.position];
-                currOrb.opacity = 64;
+                _dragOrb.opacity = 0.6;
                 //Calculate the position of the mouse pointer to the
                 _dragOffset = CGPointMake(touchLocation.x - currOrb.boundingBox.origin.x, touchLocation.y - currOrb.boundingBox.origin.y);
 
@@ -316,7 +312,7 @@ static const int GRID_COLUMNS = 6;
 {
     // when touches end, meaning the user releases their finger, release the temp Orb object
     [self removeChild:_dragOrb];
-    _realDragOrb.opacity = 255;
+    _realDragOrb.opacity = 1;
 
     //Clear the pointers
     _realDragOrb = nil;
@@ -359,8 +355,8 @@ static const int GRID_COLUMNS = 6;
 
 - (void)swapOrbs:(CGPoint)location
 {
-    if (!_dragOrb) {
-		//Find the orb that it swapped with
+    if (_dragOrb != nil) {
+        //Find the orb that it swapped with
         Orb* swapOrb = nil;
         for (Orb* boardOrb in _gridArray) {
             if (boardOrb != _realDragOrb && boardOrb.numberOfRunningActions == 0 && CGRectContainsPoint(boardOrb.boundingBox, location)) {
@@ -370,13 +366,14 @@ static const int GRID_COLUMNS = 6;
             }
         }
         if (swapOrb) {
-//            int idxA = (int)[_gridArray indexOfObject:swapOrb];
-//            int idxB = (int)[_gridArray indexOfObject:_realDragOrb];
-//            [_gridArray replaceObjectAtIndex:idxA withObject:_realDragOrb];
-//            [_gridArray replaceObjectAtIndex:idxB withObject:swapOrb];
-//            [self updateOrbPositionsAfterSwap:0.05];
-			[_realDragOrb setColor:swapOrb.orbColor];
-			[swapOrb setColor:_dragOrb.orbColor];
+            //            int idxA = (int)[_gridArray indexOfObject:swapOrb];
+            //            int idxB = (int)[_gridArray indexOfObject:_realDragOrb];
+            //            [_gridArray replaceObjectAtIndex:idxA withObject:_realDragOrb];
+            //            [_gridArray replaceObjectAtIndex:idxB withObject:swapOrb];
+            //            [self updateOrbPositionsAfterSwap:0.05];
+            [_realDragOrb setColor:swapOrb.orbColor];
+            [swapOrb setColor:_dragOrb.orbColor];
+            _realDragOrb = swapOrb;
         }
     }
 }
