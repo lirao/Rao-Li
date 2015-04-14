@@ -11,6 +11,8 @@
 		2C0627311A9BA12D00A46FFA /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627301A9BA12D00A46FFA /* Grid.m */; };
 		2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627331A9BA1AD00A46FFA /* Orb.m */; };
 		2C0627371A9BE5FC00A46FFA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0627361A9BE5FC00A46FFA /* Level.m */; };
+		2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF591ADB56B800781050 /* Slime.m */; };
+		2CB6FF5F1ADB570C00781050 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF5E1ADB570C00781050 /* Expression.m */; };
 		2CC3B3F51AA6782C00738719 /* tamhe01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */; };
 		2CC3B3F71AA678B900738719 /* tampi05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F61AA678B800738719 /* tampi05.mp3 */; };
 		2CC3B3FB1AA67A8600738719 /* icedown2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3FA1AA67A8600738719 /* icedown2.mp3 */; };
@@ -164,6 +166,10 @@
 		2C0627331A9BA1AD00A46FFA /* Orb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Orb.m; path = Source/Orb.m; sourceTree = "<group>"; };
 		2C0627351A9BE5FC00A46FFA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = Source/Level.h; sourceTree = "<group>"; };
 		2C0627361A9BE5FC00A46FFA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = Source/Level.m; sourceTree = "<group>"; };
+		2CB6FF581ADB56B700781050 /* Slime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slime.h; path = Source/Slime.h; sourceTree = "<group>"; };
+		2CB6FF591ADB56B800781050 /* Slime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slime.m; path = Source/Slime.m; sourceTree = "<group>"; };
+		2CB6FF5D1ADB570C00781050 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = Source/Expression.h; sourceTree = "<group>"; };
+		2CB6FF5E1ADB570C00781050 /* Expression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expression.m; path = Source/Expression.m; sourceTree = "<group>"; };
 		2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tamhe01.mp3; sourceTree = "<group>"; };
 		2CC3B3F61AA678B800738719 /* tampi05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tampi05.mp3; sourceTree = "<group>"; };
 		2CC3B3FA1AA67A8600738719 /* icedown2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = icedown2.mp3; sourceTree = "<group>"; };
@@ -476,6 +482,10 @@
 				2C0627301A9BA12D00A46FFA /* Grid.m */,
 				2C0627351A9BE5FC00A46FFA /* Level.h */,
 				2C0627361A9BE5FC00A46FFA /* Level.m */,
+				2CB6FF581ADB56B700781050 /* Slime.h */,
+				2CB6FF591ADB56B800781050 /* Slime.m */,
+				2CB6FF5D1ADB570C00781050 /* Expression.h */,
+				2CB6FF5E1ADB570C00781050 /* Expression.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -860,7 +870,9 @@
 				2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */,
 				2C0627311A9BA12D00A46FFA /* Grid.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				2CB6FF5F1ADB570C00781050 /* Expression.m in Sources */,
 				2C0627371A9BE5FC00A46FFA /* Level.m in Sources */,
 				2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */,
 			);

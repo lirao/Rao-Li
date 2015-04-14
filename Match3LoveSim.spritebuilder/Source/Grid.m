@@ -45,8 +45,9 @@ static const int GRID_COLUMNS = 6;
     self.userInteractionEnabled = YES;
 
     //init values
-    self.affection = 0;
-    self.life = 1000;
+    _gamePlay.affection = 0;
+    _gamePlay.life = 1000;
+    _gamePlay.multiplier = 0;
 }
 
 - (void)setupGrid
@@ -254,9 +255,9 @@ static const int GRID_COLUMNS = 6;
         return;
 
     NSMutableArray* batch = [batches lastObject];
-    _affection += batch.count;
-
+    [self updateScore:batch totalMultiplier:batches.count];
     for (Orb* orb in batch) {
+
         CCActionFadeOut* fadeOut = [[CCActionFadeOut alloc] initWithDuration:0.25];
         CCActionCallBlock* completion = [[CCActionCallBlock alloc] initWithBlock:^{
 			_howManyToProcess --;
@@ -279,6 +280,31 @@ static const int GRID_COLUMNS = 6;
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 		[self processBatches:batches];
     });
+}
+
+- (void)updateScore:(NSMutableArray*)orbs totalMultiplier:(long)totalMultiplier
+{
+    MyValue batchColor = ((Orb*)[orbs objectAtIndex:0]).orbColor;
+
+    long score = (1 + totalMultiplier / 10) * orbs.count;
+    long scoreDown = (1 - totalMultiplier / 10) * orbs.count;
+    switch (batchColor) {
+    case HEAL:
+        _gamePlay.life += score;
+        break;
+    case PTUP:
+        _gamePlay.affection += score;
+        break;
+    case PTUPSP:
+        _gamePlay.affection += score * 2;
+    case PTDOWN:
+        _gamePlay.affection -= scoreDown;
+    case PTDOWNSP:
+        _gamePlay.affection -= scoreDown * 2;
+    default:
+        break;
+    }
+    _gamePlay.multiplier++;
 }
 
 - (void)touchBegan:(CCTouch*)touch withEvent:(CCTouchEvent*)event
@@ -353,14 +379,13 @@ static const int GRID_COLUMNS = 6;
     }
 }
 
-- (void)swapOrbs:(CGPoint)location
+- (void)swapOrbs //:(CGPoint)location
 {
-    if (_dragOrb != nil) {
+    if (_dragOrb) {
         //Find the orb that it swapped with
         Orb* swapOrb = nil;
         for (Orb* boardOrb in _gridArray) {
-            if (boardOrb != _realDragOrb && boardOrb.numberOfRunningActions == 0 && CGRectContainsPoint(boardOrb.boundingBox, location)) {
-                //            if (boardOrb != _realDragOrb && boardOrb.numberOfRunningActions == 0 && [_dragOrb isOverlap:boardOrb]) {
+            if (boardOrb != _realDragOrb && boardOrb.numberOfRunningActions == 0 && [_dragOrb isOverlap:boardOrb]) {
                 swapOrb = boardOrb;
                 break;
             }
@@ -388,9 +413,10 @@ static const int GRID_COLUMNS = 6;
         location.x -= _dragOffset.x;
         location.y -= _dragOffset.y;
         [_dragOrb setPosition:location];
-        [self swapOrbs:location];
+        //        [self swapOrbs:location];
+        [self swapOrbs];
         //Minus 1 life for every drag event fired
-        _life--;
+        _gamePlay.life--;
     }
 }
 

@@ -10,12 +10,12 @@
 
 
 typedef NS_ENUM(NSInteger, MyValue) {
-	RED = 0,
-	ORANGE,
-	YELLOW,
-	GREEN,
-	BLUE,
-	PURPLE,
+	HEAL = 0,
+	PTDOWN,
+	PTDOWNSP,
+	NEUTRAL,
+	PTUP,
+	PTUPSP,
 	color_count
 };
 

@@ -11,8 +11,8 @@
 
 @interface Grid : CCNode
 
-@property (nonatomic, assign) int life;
-@property (nonatomic, assign) int affection;
+//@property (nonatomic, assign) int life;
+//@property (nonatomic, assign) int affection;
 @property (nonatomic, strong) Gameplay* gamePlay;
 
 @end

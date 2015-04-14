@@ -10,6 +10,8 @@
 #import "Orb.h"
 #import "Grid.h"
 #import "Level.h"
+#import "Expression.h"
+#import "Slime.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
@@ -21,7 +23,14 @@
 
 	CCLabelTTF *_lifeLabel;
 	CCLabelTTF *_affectionLabel;
+	CCLabelTTF *_multiplierLabel;
+	CCLabelTTF *_scoreLabel;
 
+	Expression *_expressionA;
+	Expression *_expressionB;
+	Slime *_slimeA;
+	Slime *_slimeB;
+	
 }
 
 - (id)init
@@ -35,18 +44,22 @@
 // is called when CCB file has completed loading
 - (void)didLoadFromCCB
 {
+	_grid.gamePlay = self;
 	// access audio object
 	OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
 	// play bgm
 	[audio playBg:@"/Resources/Audio/tampi05.mp3" loop:YES];
 	//Preload sfx
 	[audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
+
 }
 
 - (void)update:(CCTime)delta {
+	_lifeLabel.string = [NSString stringWithFormat:@"%f", _life];
+	_affectionLabel.string = [NSString stringWithFormat:@"%f", _affection];
+//	_affectionLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
+//	_affectionLabel.string = [NSString stringWithFormat:@"%f", _score];
 
-	_lifeLabel.string = [NSString stringWithFormat:@"%d", _grid.life];
-	_affectionLabel.string = [NSString stringWithFormat:@"%d", _grid.affection];
 }
 
 @end

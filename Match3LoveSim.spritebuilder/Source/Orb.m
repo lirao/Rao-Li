@@ -13,7 +13,8 @@
 //Stores the _cellHeight and cellWidth
 static int MAX_X=64;
 static int MAX_Y=64;
-static NSString* SPRITE = @"Assets/object_coloful-mushrooms/%@";
+//static NSString* SPRITE = @"Assets/object_coloful-mushrooms/%@";
+static NSString* SPRITE = @"Assets/object_game-power-ups/%@";
 
 @implementation Orb {
 }
@@ -21,7 +22,7 @@ static NSString* SPRITE = @"Assets/object_coloful-mushrooms/%@";
 //Init with random color
 - (instancetype)initOrb
 {
-    MyValue rand = arc4random() % 6;
+    MyValue rand = arc4random() % color_count;
     printf("Random number: %d", (int)rand);
     return [self initWithColor:rand];
 }
@@ -29,54 +30,30 @@ static NSString* SPRITE = @"Assets/object_coloful-mushrooms/%@";
 - (void)setColor:(MyValue)color
 {
 	NSString* spritePath;
-//	switch (color) {
-//		case RED:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_002.png";
-//			break;
-//		case ORANGE:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_003.png";
-//			break;
-//		case YELLOW:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_004.png";
-//			break;
-//		case GREEN:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_005.png";
-//			break;
-//		case BLUE:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_006.png";
-//			break;
-//		case PURPLE:
-//			spritePath = @"Assets/object_coloful-mushrooms/Mushrooms_01_256x256_Alt_00_007.png";
-//			break;
-//		default:
-//			spritePath = @"Assets/object_billiard_balls/Billiard_Balls_01_Black_256x256.png";
-//			break;
-//	}
 
 	switch (color) {
-		case RED:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_002.png"];
+		case HEAL:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Heart.png"];
 			break;
-		case ORANGE:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_003.png"];
+		case PTDOWN:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Potion-Purple.png"];
 			break;
-		case YELLOW:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_004.png"];
+		case PTDOWNSP:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Shield.png"];
 			break;
-		case GREEN:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_005.png"];
+		case NEUTRAL:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Ice.png"];
 			break;
-		case BLUE:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_006.png"];
+		case PTUP:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Blast.png"];
 			break;
-		case PURPLE:
-			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_007.png"];
+		case PTUPSP:
+			spritePath = [NSString stringWithFormat:SPRITE, @"Star.png"];
 			break;
 		default:
 			spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_001.png"];
 			break;
 	}
-
 
 	// 5) To change image :
 	[self setSpriteFrame:[SPRITE_CACHE spriteFrameByName:spritePath]];
@@ -108,12 +85,17 @@ static NSString* SPRITE = @"Assets/object_coloful-mushrooms/%@";
 
 - (BOOL)isOverlap:(Orb*)anotherOrb
 {
-//	//Check if they are actually intersecting with standard function
-//	if (CGRectIntersectsRect([self.boundingBox.origin],[anotherOrb.boundingbox]) {
-//		return YES;
-//	}
-//		else
-//		return NO;
+	if( CGRectIntersectsRect( [self boundingBox], [anotherOrb boundingBox] ) ) {
+
+		// Handle detailed overlap
+		float distanceForCollision = (self.contentSize.width * 0.7) + (anotherOrb.contentSize.width * 0.7);
+		float actualDistance = ccpDistance( self.position, anotherOrb.position );
+		if( actualDistance <= distanceForCollision ){
+			return YES;
+		}
+
+	}
+	return NO;
 }
 
 @end

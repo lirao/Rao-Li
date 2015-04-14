@@ -11,7 +11,9 @@
 
 @interface Gameplay : CCNode
 
-@property (nonatomic, assign) int life;
-@property (nonatomic, assign) int affection;
+@property (nonatomic, assign) double life;
+@property (nonatomic, assign) double affection;
+@property (nonatomic, assign) int multiplier;
+@property (nonatomic, assign) double score;
 
 @end

@@ -79,6 +79,7 @@ tsundere slime and megane slime
 ## Features List
 * Achievements e.g. go to movies 10 times -> 100 times
 * Episode changes based on behavior,  clear different blocks means different behavior, bad ending may occur
+* Scenarios and Days - Day end when life ends
 
 
 ## MVP Milestones
@@ -101,23 +102,31 @@ tsundere slime and megane slime
 	
 
 ### Week 3 (3/31 - 4/6/2014)
-* Add episode 1 to the core game
+* Planned
 	* Implement scoring
 	* Score multipliers
 	* Add in the slime graphic
 	* special object to restore life
-	
+* Completed
+	* Scoring and multiplier implemented (no popup labels)
+	* Slime spritesheet added to game project
+	* Heal and scoreup/scoredown also implemented
+	* Replaced icons	
 
 ### Week 4 (4/7 - 4/13/2014) - _finishing core gameplay_
-* add score (and multiplier) animatinos
-* add expression change as response to movement
+* Planned
+	* add score (and multiplier) popup animatinos
+	* Add slime animation (eternal loop)
+	* add expression change as response to score change
+	* Make poster + pitch
 
 ### Week 5 (4/14 - 4/20/2014)
-* Fix images and finalize them 
+* Make status screen (2nd loop) 
 * Add "advanced orb matching tutorial"
+* 
 
 ### Week 6 (4/21 - 4/27/2014) - _finishing the polish_
-* Polish game
+* Tutorials
 
 ### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
 *  Write game description, make poster
