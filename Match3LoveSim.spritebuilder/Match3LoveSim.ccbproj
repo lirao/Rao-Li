@@ -80,11 +80,43 @@
 		</dict>
 		<key>Assets</key>
 		<dict/>
-		<key>Assets/object_billiard-balls</key>
+		<key>Assets/Hearts_01_256x256_008@4x.png</key>
 		<dict>
 			<key>isDirty</key>
 			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
 		</dict>
+		<key>Assets/Sun@4x.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/interface_buttons/buttons-20.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/interface_buttons/buttons-21.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/logo.png</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>scaleFrom</key>
+			<integer>1</integer>
+		</dict>
+		<key>Assets/object_billiard-balls</key>
+		<dict/>
 		<key>Assets/object_coloful-mushrooms</key>
 		<dict/>
 		<key>Assets/object_game-power-ups</key>
@@ -93,10 +125,7 @@
 			<true/>
 		</dict>
 		<key>Assets/object_game-power-ups/1up.png</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>Assets/object_yay-candies</key>
 		<dict/>
 		<key>Assets/slime/Blue</key>

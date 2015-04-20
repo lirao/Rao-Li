@@ -72,6 +72,10 @@ tsundere slime and megane slime
 	* [Epic Runes](http://facebook.com/epicrunes)
 	* http://seesaawiki.jp/w/kusaikatana/
 	* http://etolier.webcrow.jp/material/xpchara.html
+	* http://opengameart.org/content/2d-speech-bubbles
+	* Erik Herschend http://www.erikherschend.com/
+	* GameArtForge http://opengameart.org/users/gameartforge
+	* OpenStockProject http://www.openstockproject.com/
 	
 * Audio Assets
 	* TAM Music Factory
@@ -115,18 +119,29 @@ tsundere slime and megane slime
 
 ### Week 4 (4/7 - 4/13/2014) - _finishing core gameplay_
 * Planned
-	* add score (and multiplier) popup animatinos
+	* add score (and multiplier) popup animation
 	* Add slime animation (eternal loop)
 	* add expression change as response to score change
 	* Make poster + pitch
+* Completed
+	* Slime animation added
+	* Make poster/pitch
 
 ### Week 5 (4/14 - 4/20/2014)
-* Make status screen (2nd loop) 
-* Add "advanced orb matching tutorial"
-* 
+* Planned
+	* Fix collision detection bug
+	* Add score (and multiplier) popup animation
+	* Add expression change as response to score change
+	* Add affection bar/time bar
+
 
 ### Week 6 (4/21 - 4/27/2014) - _finishing the polish_
-* Tutorials
+* Add "advanced orb matching tutorial"
+* Credits/Achievements screen
+* Make Plot unlock screen (2nd loop)
+
 
 ### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
-*  Write game description, make poster
+*  Finish up on whatever is left to do
+*  Get playtesting feedback and change stuff
+*  Prepare pitch

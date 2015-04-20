@@ -15,6 +15,7 @@ static const int GRID_ROWS = 6;
 static const int GRID_COLUMNS = 6;
 
 @implementation Grid {
+	CCPhysicsNode* _physicsNode;
     NSMutableArray* _gridArray;
     float _cellWidth;
     float _cellHeight;
@@ -24,10 +25,25 @@ static const int GRID_COLUMNS = 6;
     NSMutableArray* _allOrbs;
     NSMutableSet* _clearBlk, *_clearStrip;
 
+		
     int _howManyToProcess;
     Level* _level;
 }
 
+// is called when CCB file has completed loading
+- (void)didLoadFromCCB
+{
+	// accept touches on the grid
+	self.userInteractionEnabled = YES;
+//	//Load level 1
+//	CCScene* level = [CCBReader loadAsScene:@"Levels/Level1"];
+//	[_levelNode addChild:level];
+
+	// visualize physics bodies & joints
+//	_physicsNode.debugDraw = TRUE;
+	//become own physics delegate
+	_physicsNode.collisionDelegate = self;
+}
 - (void)onEnter
 {
     [super onEnter];
@@ -41,8 +57,6 @@ static const int GRID_COLUMNS = 6;
     //pointer to the player-dragged orb
     _dragOrb = nil;
 
-    // accept touches on the grid
-    self.userInteractionEnabled = YES;
 
     //init values
     _gamePlay.affection = 0;
@@ -69,7 +83,7 @@ static const int GRID_COLUMNS = 6;
         for (int j = 0; j < GRID_COLUMNS; j++) {
             Orb* orb = [[Orb alloc] initOrb];
             orb.position = ccp(x, y);
-            [self addChild:orb];
+            [_physicsNode addChild:orb];
 
             // this is shorthand to access an array inside an array
             int index = i * GRID_COLUMNS + j;
@@ -107,7 +121,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:newOrb];
-            NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
+//            NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesAboveOrb:newOrb index:newIndex];
         }
     }
@@ -124,7 +138,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
+//            NSLog(@"match below, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesBelowOrb:newOrb index:newIndex];
         }
     }
@@ -141,7 +155,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
+//            NSLog(@"match left, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesLeftOrb:newOrb index:newIndex];
         }
     }
@@ -158,7 +172,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            NSLog(@"match above, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
+//            NSLog(@"match right, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
             [self findMatchesRightOrb:newOrb index:newIndex];
         }
     }
@@ -219,9 +233,9 @@ static const int GRID_COLUMNS = 6;
         int y = index / GRID_COLUMNS;
         Orb* newOrb = [[Orb alloc] initOrb];
         newOrb.position = ccp(x * _cellWidth, (GRID_ROWS + y) * _cellHeight);
-        [self addChild:newOrb];
+        [_physicsNode addChild:newOrb];
         [_gridArray replaceObjectAtIndex:index withObject:newOrb];
-        [self removeChild:orb];
+        [_physicsNode removeChild:orb];
     }
     [self updateOrbPositionsAfterSwap:0.5];
 }
@@ -311,21 +325,23 @@ static const int GRID_COLUMNS = 6;
 {
     if (self.userInteractionEnabled) {
         //get the x,y coordinates of the touch
-        CGPoint touchLocation = [touch locationInNode:self];
+        CGPoint touchLocation = [touch locationInNode:_physicsNode];
 
         //get the Orb at that location
 
         for (Orb* currOrb in _gridArray) {
             //Find the orb that's being tapped
-            if (!_dragOrb && CGRectContainsPoint(currOrb.boundingBox, touchLocation)) {
+            if (!_dragOrb && CGRectContainsPoint([currOrb boundingBox], touchLocation)) {
                 //Clone the starting orb to create a ghost orb dragged
                 _dragOrb = [[Orb alloc] initWithColor:currOrb.orbColor];
                 [_dragOrb setPosition:currOrb.position];
                 _dragOrb.opacity = 0.6;
                 //Calculate the position of the mouse pointer to the
                 _dragOffset = CGPointMake(touchLocation.x - currOrb.boundingBox.origin.x, touchLocation.y - currOrb.boundingBox.origin.y);
+				
+				_dragOrb.physicsBody.collisionType = @"dragOrb";
 
-                [self addChild:_dragOrb];
+                [_physicsNode addChild:_dragOrb];
                 _realDragOrb = currOrb;
                 _dragOrb.zOrder = 10;
                 return;
@@ -337,7 +353,7 @@ static const int GRID_COLUMNS = 6;
 - (void)touchEnded:(CCTouch*)touch withEvent:(CCTouchEvent*)event
 {
     // when touches end, meaning the user releases their finger, release the temp Orb object
-    [self removeChild:_dragOrb];
+    [_physicsNode removeChild:_dragOrb];
     _realDragOrb.opacity = 1;
 
     //Clear the pointers
@@ -379,6 +395,7 @@ static const int GRID_COLUMNS = 6;
     }
 }
 
+/*
 - (void)swapOrbs //:(CGPoint)location
 {
     if (_dragOrb) {
@@ -403,6 +420,8 @@ static const int GRID_COLUMNS = 6;
     }
 }
 
+
+
 - (void)touchMoved:(CCTouch*)touch withEvent:(CCTouchEvent*)event
 {
     if (!self.userInteractionEnabled)
@@ -423,6 +442,37 @@ static const int GRID_COLUMNS = 6;
 - (void)touchCancelled:(CCTouch*)touch withEvent:(CCTouchEvent*)event
 {
     [self touchEnded:touch withEvent:event];
+}
+*/
+- (void)touchMoved:(CCTouch*)touch withEvent:(CCTouchEvent*)event
+{
+	if (!self.userInteractionEnabled)
+		return;
+
+	if (_dragOrb) {
+		CGPoint location = [touch locationInNode:self];
+		location.x -= _dragOffset.x;
+		location.y -= _dragOffset.y;
+		[_dragOrb setPosition:location];
+		//Minus 1 life for every drag event fired
+		_gamePlay.life--;
+	}
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair dragOrb:(Orb *)dragOrb orb:(Orb *)orb
+{
+	NSLog(@"%@", dragOrb.physicsBody.collisionType);
+	NSLog(@"%@", orb.physicsBody.collisionType);
+	if (_dragOrb) {
+		//Find the orb that it swapped with
+		Orb* swapOrb = orb;
+		[_realDragOrb setColor:swapOrb.orbColor];
+		[swapOrb setColor:_dragOrb.orbColor];
+		_realDragOrb = swapOrb;
+
+	}
+
+	return NO;
 }
 
 @end

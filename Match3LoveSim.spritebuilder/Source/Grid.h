@@ -9,7 +9,7 @@
 #import "CCNode.h"
 #import "Gameplay.h"
 
-@interface Grid : CCNode
+@interface Grid : CCNode<CCPhysicsCollisionDelegate>
 
 //@property (nonatomic, assign) int life;
 //@property (nonatomic, assign) int affection;

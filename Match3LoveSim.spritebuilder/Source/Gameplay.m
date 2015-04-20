@@ -16,7 +16,6 @@
 
 
 @implementation Gameplay {
-    CCPhysicsNode* _physicsNode;
 
 	//	Level* _level;
 	Grid* _grid;
@@ -33,18 +32,13 @@
 	
 }
 
-- (id)init
-{
-    if ((self = [super init])) {
-    }
-
-    return self;
-}
 
 // is called when CCB file has completed loading
 - (void)didLoadFromCCB
 {
 	_grid.gamePlay = self;
+
+
 	// access audio object
 	OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
 	// play bgm
@@ -52,11 +46,12 @@
 	//Preload sfx
 	[audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
 
+
 }
 
 - (void)update:(CCTime)delta {
-	_lifeLabel.string = [NSString stringWithFormat:@"%f", _life];
-	_affectionLabel.string = [NSString stringWithFormat:@"%f", _affection];
+	_lifeLabel.string = [NSString stringWithFormat:@"%.f", _life];
+	_affectionLabel.string = [NSString stringWithFormat:@"%.f", _affection];
 //	_affectionLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
 //	_affectionLabel.string = [NSString stringWithFormat:@"%f", _score];
 
