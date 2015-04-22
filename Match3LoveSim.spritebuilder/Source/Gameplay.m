@@ -12,6 +12,8 @@
 #import "Level.h"
 #import "Expression.h"
 #import "Slime.h"
+#import "TimeBar.h"
+#import "AffectionBar.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
@@ -29,6 +31,9 @@
 	Expression *_expressionB;
 	Slime *_slimeA;
 	Slime *_slimeB;
+
+	TimeBar *_timeBar;
+	AffectionBar *_affectionBar;
 	
 }
 
@@ -37,7 +42,6 @@
 - (void)didLoadFromCCB
 {
 	_grid.gamePlay = self;
-
 
 	// access audio object
 	OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
@@ -50,11 +54,19 @@
 }
 
 - (void)update:(CCTime)delta {
-	_lifeLabel.string = [NSString stringWithFormat:@"%.f", _life];
-	_affectionLabel.string = [NSString stringWithFormat:@"%.f", _affection];
+//	_lifeLabel.string = [NSString stringWithFormat:@"%.f", _life];
+//	_affectionLabel.string = [NSString stringWithFormat:@"%.f", _affection];
 //	_affectionLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
 //	_affectionLabel.string = [NSString stringWithFormat:@"%f", _score];
 
+	_affectionBar.percentage =_affection/100;
+	_timeBar.percentage = _life/100;
+
+}
+
+- (void) updateExpression: (MyValue)orbColor {
+	[_expressionA changeExp:orbColor];
+	[_expressionB changeExp:orbColor];
 }
 
 @end

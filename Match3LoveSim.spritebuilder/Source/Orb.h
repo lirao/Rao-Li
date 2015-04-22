@@ -31,6 +31,9 @@ typedef NS_ENUM(NSInteger, MyValue) {
 
 + (void) setHeight:(int)value;
 + (void) setWidth:(int)value;
+//+ (int) getHeight;
+//+ (int) getWidth;
+
 
 
 @end

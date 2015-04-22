@@ -45,7 +45,7 @@
         @(PTUPSP) : @"(ﾉ>ω<)ﾉ" };
 }
 
--(void)changeExp : (MyValue) orbType
+-(void) changeExp : (MyValue) orbType
 {
 	if (_isA)
 	{

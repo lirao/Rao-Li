@@ -7,9 +7,10 @@
 //
 
 #import "CCLabelTTF.h"
+#import "Orb.h"
 
 @interface Expression : CCLabelTTF
 
-
+-(void) changeExp : (MyValue) orbType;
 
 @end

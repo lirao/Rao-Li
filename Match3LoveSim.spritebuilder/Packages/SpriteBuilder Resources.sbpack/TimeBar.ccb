@@ -85,7 +85,7 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>32</real>
+							<real>24</real>
 							<real>1</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -161,12 +161,10 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>AffectionBar</string>
+		<string>TimeBar</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -235,6 +233,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

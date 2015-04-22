@@ -133,13 +133,16 @@ tsundere slime and megane slime
 	* Add score (and multiplier) popup animation
 	* Add expression change as response to score change
 	* Add affection bar/time bar
-
+* Completed
+	* Fixed main game and bugs
+	* Added expression change and score/multiplier popup
 
 ### Week 6 (4/21 - 4/27/2014) - _finishing the polish_
+* Fix affection/time bars
 * Add "advanced orb matching tutorial"
-* Credits/Achievements screen
+* Credits/Achievements screen* 
 * Make Plot unlock screen (2nd loop)
-
+* Fix polish animations
 
 ### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
 *  Finish up on whatever is left to do

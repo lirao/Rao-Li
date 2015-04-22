@@ -14,6 +14,7 @@
 		2C6916931AE56DE8002AB0A3 /* AffectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916921AE56DE8002AB0A3 /* AffectionBar.m */; };
 		2C6916971AE575B4002AB0A3 /* Save.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C6916961AE575B4002AB0A3 /* Save.plist */; };
 		2C69169A1AE583C6002AB0A3 /* TimeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916991AE583C6002AB0A3 /* TimeBar.m */; };
+		2C6916A01AE6E38C002AB0A3 /* ScorePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C69169E1AE6E38C002AB0A3 /* ScorePopup.m */; };
 		2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF591ADB56B800781050 /* Slime.m */; };
 		2CB6FF5F1ADB570C00781050 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF5E1ADB570C00781050 /* Expression.m */; };
 		2CC3B3F51AA6782C00738719 /* tamhe01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */; };
@@ -174,6 +175,8 @@
 		2C6916961AE575B4002AB0A3 /* Save.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Save.plist; path = ../Save.plist; sourceTree = "<group>"; };
 		2C6916981AE583C5002AB0A3 /* TimeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeBar.h; path = Source/TimeBar.h; sourceTree = "<group>"; };
 		2C6916991AE583C6002AB0A3 /* TimeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeBar.m; path = Source/TimeBar.m; sourceTree = "<group>"; };
+		2C69169E1AE6E38C002AB0A3 /* ScorePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScorePopup.m; path = Source/ScorePopup.m; sourceTree = "<group>"; };
+		2C69169F1AE6E38C002AB0A3 /* ScorePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScorePopup.h; path = Source/ScorePopup.h; sourceTree = "<group>"; };
 		2CB6FF581ADB56B700781050 /* Slime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slime.h; path = Source/Slime.h; sourceTree = "<group>"; };
 		2CB6FF591ADB56B800781050 /* Slime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slime.m; path = Source/Slime.m; sourceTree = "<group>"; };
 		2CB6FF5D1ADB570C00781050 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = Source/Expression.h; sourceTree = "<group>"; };
@@ -478,6 +481,10 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2C69169E1AE6E38C002AB0A3 /* ScorePopup.m */,
+				2C69169F1AE6E38C002AB0A3 /* ScorePopup.h */,
+				2C6916981AE583C5002AB0A3 /* TimeBar.h */,
+				2C6916991AE583C6002AB0A3 /* TimeBar.m */,
 				2C0627321A9BA1AD00A46FFA /* Orb.h */,
 				2C0627331A9BA1AD00A46FFA /* Orb.m */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
@@ -524,8 +531,6 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
-				2C6916981AE583C5002AB0A3 /* TimeBar.h */,
-				2C6916991AE583C6002AB0A3 /* TimeBar.m */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
@@ -890,6 +895,7 @@
 				2C6916931AE56DE8002AB0A3 /* AffectionBar.m in Sources */,
 				2C69169A1AE583C6002AB0A3 /* TimeBar.m in Sources */,
 				2C0627371A9BE5FC00A46FFA /* Level.m in Sources */,
+				2C6916A01AE6E38C002AB0A3 /* ScorePopup.m in Sources */,
 				2C0627341A9BA1AE00A46FFA /* Orb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
