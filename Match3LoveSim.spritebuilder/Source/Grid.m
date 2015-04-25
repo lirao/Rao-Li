@@ -63,6 +63,7 @@ static const int GRID_COLUMNS = 6;
     _gamePlay.life = 1000;
     _gamePlay.multiplier = 0;
     [self turnEnd];
+
 }
 
 - (void)setupGrid

@@ -22,6 +22,7 @@
 	//	Level* _level;
 	Grid* _grid;
 
+
 	CCLabelTTF *_lifeLabel;
 	CCLabelTTF *_affectionLabel;
 	CCLabelTTF *_multiplierLabel;
@@ -34,7 +35,8 @@
 
 	TimeBar *_timeBar;
 	AffectionBar *_affectionBar;
-	
+
+	CCSprite *_heartSprite;
 }
 
 
@@ -50,6 +52,15 @@
 	//Preload sfx
 	[audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
 
+	
+	_affectionBar = [AffectionBar affectionBarDefault];
+	
+	_affectionBar.position = _heartSprite.position;
+	_affectionBar.anchorPoint = _heartSprite.anchorPoint;
+	_affectionBar.positionType = _heartSprite.positionType;
+	[self addChild:_affectionBar];
+
+
 
 }
 
@@ -59,7 +70,7 @@
 //	_affectionLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
 //	_affectionLabel.string = [NSString stringWithFormat:@"%f", _score];
 
-	_affectionBar.percentage =_affection/100;
+//	_affectionBar.percentage =_affection/100;
 	_timeBar.percentage = _life/100;
 
 }

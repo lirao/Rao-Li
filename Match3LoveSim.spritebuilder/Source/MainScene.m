@@ -2,6 +2,13 @@
 
 @implementation MainScene
 
+- (void)didLoadFromCCB
+{
+//	NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"Save.plist" ofType:@"plist"];
+//	NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+//	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+}
+
 - (void)play
 {
 	// Replaces MainScene with game scene called Gameplay.ccb

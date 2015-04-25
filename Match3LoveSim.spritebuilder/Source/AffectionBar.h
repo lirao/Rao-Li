@@ -10,4 +10,6 @@
 
 @interface AffectionBar : CCProgressNode
 
+@property (nonatomic, readwrite) double score;
++ (instancetype)affectionBarDefault;
 @end
