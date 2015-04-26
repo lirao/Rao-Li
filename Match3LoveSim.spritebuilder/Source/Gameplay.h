@@ -17,4 +17,5 @@
 @property (nonatomic, assign) int multiplier;
 @property (nonatomic, assign) double score;
 - (void) updateExpression: (MyValue)orbColor;
+- (void) endDay;
 @end

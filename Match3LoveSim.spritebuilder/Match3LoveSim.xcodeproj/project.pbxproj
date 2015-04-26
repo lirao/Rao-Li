@@ -16,6 +16,7 @@
 		2C6916A01AE6E38C002AB0A3 /* ScorePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C69169E1AE6E38C002AB0A3 /* ScorePopup.m */; };
 		2C6916A31AEC1DD1002AB0A3 /* AffectionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916A21AEC1DD1002AB0A3 /* AffectionBar.m */; };
 		2C6916A61AEC545E002AB0A3 /* GameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916A51AEC545E002AB0A3 /* GameOver.m */; };
+		2C6916A91AED6532002AB0A3 /* Plot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916A81AED6532002AB0A3 /* Plot.m */; };
 		2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF591ADB56B800781050 /* Slime.m */; };
 		2CB6FF5F1ADB570C00781050 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF5E1ADB570C00781050 /* Expression.m */; };
 		2CC3B3F51AA6782C00738719 /* tamhe01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3B3F41AA6782C00738719 /* tamhe01.mp3 */; };
@@ -108,6 +109,8 @@
 		2C6916A21AEC1DD1002AB0A3 /* AffectionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AffectionBar.m; path = Source/AffectionBar.m; sourceTree = "<group>"; };
 		2C6916A41AEC545E002AB0A3 /* GameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOver.h; path = Source/GameOver.h; sourceTree = "<group>"; };
 		2C6916A51AEC545E002AB0A3 /* GameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOver.m; path = Source/GameOver.m; sourceTree = "<group>"; };
+		2C6916A71AED6532002AB0A3 /* Plot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plot.h; path = Source/Plot.h; sourceTree = "<group>"; };
+		2C6916A81AED6532002AB0A3 /* Plot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Plot.m; path = Source/Plot.m; sourceTree = "<group>"; };
 		2CB6FF581ADB56B700781050 /* Slime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Slime.h; path = Source/Slime.h; sourceTree = "<group>"; };
 		2CB6FF591ADB56B800781050 /* Slime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slime.m; path = Source/Slime.m; sourceTree = "<group>"; };
 		2CB6FF5D1ADB570C00781050 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = Source/Expression.h; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				2CB6FF5E1ADB570C00781050 /* Expression.m */,
 				2C6916A41AEC545E002AB0A3 /* GameOver.h */,
 				2C6916A51AEC545E002AB0A3 /* GameOver.m */,
+				2C6916A71AED6532002AB0A3 /* Plot.h */,
+				2C6916A81AED6532002AB0A3 /* Plot.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
 				2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */,
+				2C6916A91AED6532002AB0A3 /* Plot.m in Sources */,
 				2C0627311A9BA12D00A46FFA /* Grid.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */,

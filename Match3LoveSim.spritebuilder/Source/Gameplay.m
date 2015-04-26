@@ -36,6 +36,8 @@
 
     CCSprite* _heartSprite;
     CCSprite* _gradientSprite;
+
+	CCNode* _gameOver;
 }
 
 // is called when CCB file has completed loading
@@ -99,6 +101,7 @@
 
 - (void)endDay
 {
+	_gameOver.visible = YES;
 }
 
 - (void)home

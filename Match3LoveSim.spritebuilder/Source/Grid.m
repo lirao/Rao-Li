@@ -410,6 +410,11 @@ static const int GRID_COLUMNS = 6;
     _dragOrb = nil;
     _dragOffset = CGPointZero;
     [self turnEnd];
+
+	if (_gamePlay.life == 0)
+	{
+		[_gamePlay endDay];
+	}
 }
 
 //Settle up

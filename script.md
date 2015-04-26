@@ -26,18 +26,39 @@ Red: ヽ(✿ﾟ▽ﾟ)ノ Blue! Do you want this Potion? I just beat a Level 15 
 Blue: (´･_･`)  
 Blue: I don't need potions. I have enough dodge and I hate the taste..  
 Red: Oh... What about this star candy though? You love them! (●´・ω・‘)  
-Blue: ... Yes I do (*ﾟ∀ﾟ*)  
-Blue: But stop giving me stuff   
+Blue: ... Yes I do (*ﾟ∀ﾟ*)     
 
 ## Heart 1: Development 承
-Blue slime leaves on a journey to train. Red chases after Blue
+Blue slime leaves on a journey to train. Red chases after Blue   
+Blue: (๑•̀ㅂ•́)و✧ Red, I'm decided to go on special training with the Kung Fu Master to get stronger.  
+Red: But that's really far away, I'm going to miss you...   
+Red: (☆_☆) Let me come with you!  
+Blue: (´-ι_-｀) Fine...  
 ## Heart 2: Plot twist 转
-Blue found a kungfu master and training from hell! Meanwhile Red has ran out of food.
+Blue found a kungfu master and training from hell! Meanwhile Red has ran out of food.  
+Blue: ┏((＝￣(ｴ)￣=))┛  
+─=≡Σ((( つ•̀ω•́)=c＜一ω<))   
+Red: ㅇㅅㅇ Blue trains all day and doesn't talk to me anymore...  
+I'm hungry...   
+I... don't... have... energy...   
+_(´ཀ`」 ∠)_   
+...  
+Blue: Red! Look at my new attack! ─=≡Σ((( つ•̀ω•́)つ   
+...?  
+Where are you Red?
+
 ## Heart 3: Resolution 合
-Blue finds starving Red and saves Red from a life of debt and forced labor. They make up! Red is on the verge of confessing its feelings towards Blue...
+Blue finds starving Red and saves Red from a life of debt and forced labor. They make up! Red is on the verge of confessing its feelings towards Blue...  
+Goons: (✧≖‿ゝ≖) You owe us 500 million for that banana    
+Pay up or work for us for the rest of your miserable live! థ౪థ        
+Red: Σ( ° △ °|||)︴    
+I thought that was a gift!  
+   
+      
 ## Heart 4: Turnabout 逆转
 More enemies appeared! Blue and Red party up and tries to fend off enemies...
 
-## Heart MAX: All Our Powers Combined Happy End ♥
+## Heart MAX: Combo Up Happy End ♥
 Blue and Red are overwhelmed. Red chucks all his items at enemies in a panic and got away in the confusion! 
-
+(<ゝω・)☆
+(〃￣ω￣)人(￣︶￣〃) 
