@@ -17,14 +17,18 @@
 }
 - (void)plot
 {
-	// Replaces MainScene with game scene called Gameplay.ccb
 	CCScene* scene = [CCBReader loadAsScene:@"Plot"];
 	[[CCDirector sharedDirector] replaceScene:scene];
 }
 - (void)credits
 {
-	// Replaces MainScene with game scene called Gameplay.ccb
 	CCScene* scene = [CCBReader loadAsScene:@"Credits"];
+	[[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void) home
+{
+	CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
 	[[CCDirector sharedDirector] replaceScene:scene];
 }
 @end

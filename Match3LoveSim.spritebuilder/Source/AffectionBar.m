@@ -9,9 +9,7 @@
 #import "AffectionBar.h"
 
 static long TOTAL_AFFECTION = 1000;
-@implementation AffectionBar {
-    //	CCSprite *_barSprite;
-}
+@implementation AffectionBar
 
 - (void)setScore:(double)score
 {
@@ -29,7 +27,7 @@ static long TOTAL_AFFECTION = 1000;
 ////	NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"kCumulativeScore"];
 //	self.percentage = 100;
 //}
-+ (instancetype)affectionBarDefault
++ (instancetype)progressWithDefault
 {
     AffectionBar* _affectionBar = [super progressWithSprite:[CCSprite spriteWithImageNamed:@"Assets/heartbar2x.png"]];
     _affectionBar.type = CCProgressNodeTypeBar;

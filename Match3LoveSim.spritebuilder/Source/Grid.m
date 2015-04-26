@@ -390,7 +390,6 @@ static const int GRID_COLUMNS = 6;
 
                 [_physicsNode addChild:_dragOrb];
                 _realDragOrb = currOrb;
-                _dragOrb.zOrder = 10;
                 return;
             }
         }

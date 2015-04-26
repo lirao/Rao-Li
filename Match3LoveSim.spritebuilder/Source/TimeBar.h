@@ -10,4 +10,7 @@
 
 @interface TimeBar : CCProgressNode
 
+@property (nonatomic, readwrite) double score;
++ (instancetype)progressWithDefault;
+
 @end

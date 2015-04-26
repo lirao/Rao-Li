@@ -1,4 +1,4 @@
-# mobile-ios-game
+# Doki☆Doki Slimes in Shroomland
 For Mobile Game Development Class
 
 ## Game Design
@@ -76,6 +76,7 @@ tsundere slime and megane slime
 	* Erik Herschend http://www.erikherschend.com/
 	* GameArtForge http://opengameart.org/users/gameartforge
 	* OpenStockProject http://www.openstockproject.com/
+	* Kenny http://kenney.nl/
 	
 * Audio Assets
 	* TAM Music Factory
@@ -146,5 +147,5 @@ tsundere slime and megane slime
 
 ### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
 *  Finish up on whatever is left to do
-*  Get playtesting feedback and change stuff
+*  Get play testing feedback and change stuff
 *  Prepare pitch
