@@ -381,6 +381,14 @@
 				<array>
 					<dict>
 						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>name</string>
 						<key>type</key>
 						<string>StringSimple</string>
@@ -404,8 +412,8 @@
 					<dict>
 						<key>baseValue</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>1</real>
 						</array>
 						<key>name</key>
 						<string>scale</string>
@@ -413,8 +421,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>1</real>
 							<true/>
 							<integer>0</integer>
 						</array>

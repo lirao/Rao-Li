@@ -14,6 +14,7 @@
 #import "Slime.h"
 #import "TimeBar.h"
 #import "AffectionBar.h"
+#import "GameOver.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay {
@@ -37,7 +38,7 @@
     CCSprite* _heartSprite;
     CCSprite* _gradientSprite;
 
-	CCNode* _gameOver;
+	GameOver* _gameOver;
 }
 
 // is called when CCB file has completed loading

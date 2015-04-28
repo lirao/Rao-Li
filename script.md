@@ -22,9 +22,9 @@ Perpetually hyper slime that almost always have a happy expression on top of its
 This is a story about friendship, love, and the importance of combos.
 
 ## Heart 0: Introducing Conflict 起
-Red: ヽ(✿ﾟ▽ﾟ)ノ Blue! Do you want this Potion? I just beat a Level 15 adventurer and  he paid me this as commission!  
+Red: ヽ(✿ﾟ▽ﾟ)ノ Blue! Do you want this Potion? I 	 beat a Level 15 adventurer and  he paid me this as commission!  
 Blue: (´･_･`)  
-Blue: I don't need potions. I have enough dodge and I hate the taste..  
+Blue: I don't need potions. I have enough dodge and I hate the taste...  
 Red: Oh... What about this star candy though? You love them! (●´・ω・‘)  
 Blue: ... Yes I do (*ﾟ∀ﾟ*)     
 
@@ -53,6 +53,8 @@ Goons: (✧≖‿ゝ≖) You owe us 500 million for that banana
 Pay up or work for us for the rest of your miserable live! థ౪థ        
 Red: Σ( ° △ °|||)︴    
 I thought that was a gift!  
+NOOOO   
+Blue: Red! I looked all over for you!  
    
       
 ## Heart 4: Turnabout 逆转

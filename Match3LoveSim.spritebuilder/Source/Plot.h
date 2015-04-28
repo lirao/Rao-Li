@@ -10,4 +10,6 @@
 
 @interface Plot : CCScene
 
+- (void)skip;
+
 @end

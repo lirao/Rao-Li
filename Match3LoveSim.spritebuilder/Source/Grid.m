@@ -466,8 +466,7 @@ static const int GRID_COLUMNS = 6;
         location.x -= _dragOffset.x;
         location.y -= _dragOffset.y;
         [_dragOrb setPosition:location];
-        //Minus 1 life for every drag event fired
-        _gamePlay.life--;
+
     }
 }
 
@@ -481,6 +480,9 @@ static const int GRID_COLUMNS = 6;
         [_realDragOrb setColor:swapOrb.orbColor];
         [swapOrb setColor:_dragOrb.orbColor];
         _realDragOrb = swapOrb;
+
+		//Minus 1 life for every swap fired
+		_gamePlay.life--;
     }
 
     return NO;
