@@ -142,7 +142,7 @@ static const int GRID_COLUMNS = 5;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-//            NSLog(@"match left, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
+            //            NSLog(@"match left, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
             [self findMatchesLeftOrb:newOrb index:newIndex];
         }
     }
@@ -159,8 +159,8 @@ static const int GRID_COLUMNS = 5;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-//            NSLog(@"match right, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
-			[self findMatchesRightOrb:newOrb index:newIndex];
+            //            NSLog(@"match right, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
+            [self findMatchesRightOrb:newOrb index:newIndex];
         }
     }
 }
@@ -275,7 +275,7 @@ static const int GRID_COLUMNS = 5;
         [orb runAction:sequence];
     }
     [batches removeObject:batch];
-	float delayInSeconds = 1;
+    float delayInSeconds = 1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 		[self processBatches:batches];
@@ -291,7 +291,26 @@ static const int GRID_COLUMNS = 5;
     //save scoring info
     Orb* sampleOrb = (Orb*)orbs[0];
     popup.orbColor = sampleOrb.orbColor;
-    [popup setScore:orbs.count];
+    int score = orbs.count;
+
+    switch (popup.orbColor) {
+    case PTUPSP:
+        score = score * 2;
+        break;
+    case PTDOWN:
+        score = -score;
+        break;
+    case PTDOWNSP:
+        score = -score * 2;
+        break;
+    case NEUTRAL:
+        score = 0;
+        break;
+    default:
+        break;
+    }
+
+    [popup setScore:score];
     [popup setMultiplier:(int)_scoreStack.count];
 
     popup.position = ccp(sampleOrb.position.x + _cellWidth / 2, sampleOrb.position.y + _cellHeight / 2);
@@ -305,33 +324,27 @@ static const int GRID_COLUMNS = 5;
 
 - (void)calculateScore
 {
-    int totalMultiplier = (int)_scoreStack.count;
+    double totalMultiplier = (double)_scoreStack.count;
 
     //settle up scores
     for (ScorePopup* popup in _scoreStack) {
         [popup setMultiplier:totalMultiplier];
-        long score = (1 + totalMultiplier / 10) * popup.score;
-        long scoreDown = (1 - totalMultiplier / 10) * popup.score;
+        double score = totalMultiplier * popup.score;
+        double scoreDown = (1 / totalMultiplier) * popup.score;
         switch (popup.orbColor) {
         case HEAL:
             _gamePlay.life += score;
             [popup setScore:score];
             break;
         case PTUP:
+        case PTUPSP:
             _gamePlay.affection += score;
             [popup setScore:score];
             break;
-        case PTUPSP:
-            _gamePlay.affection += score * 2;
-            [popup setScore:score * 2];
-            break;
         case PTDOWN:
-            _gamePlay.affection -= scoreDown;
-            [popup setScore:-(scoreDown)];
-            break;
         case PTDOWNSP:
-            _gamePlay.affection -= scoreDown * 2;
-            [popup setScore:-(scoreDown * 2)];
+            _gamePlay.affection += scoreDown;
+            [popup setScore:scoreDown];
             break;
         default:
             break;
@@ -451,8 +464,8 @@ static const int GRID_COLUMNS = 5;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair dragOrb:(Orb*)dragOrb orb:(Orb*)orb
 {
-//    NSLog(@"%@", dragOrb.physicsBody.collisionType);
-//    NSLog(@"%@", orb.physicsBody.collisionType);
+    //    NSLog(@"%@", dragOrb.physicsBody.collisionType);
+    //    NSLog(@"%@", orb.physicsBody.collisionType);
     if (_dragOrb) {
         //Find the orb that it swapped with
         Orb* swapOrb = orb;

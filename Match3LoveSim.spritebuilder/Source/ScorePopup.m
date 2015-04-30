@@ -26,15 +26,6 @@
     _label.string = [NSString stringWithFormat:@"%.f", _score];
 }
 
-- (CCAction *)runAction:(CCAction *)action
-{
-	CCAction *cloneAction = [action copy];
-
-	[_comboLabel runAction:action];
-	[_label runAction:cloneAction];
-	return action;
-}
-
 -(void)animate
 {
 	[Utility animate:self name:@"Expand"];

@@ -80,12 +80,55 @@
 		</dict>
 		<key>Assets</key>
 		<dict/>
+		<key>Assets/1f4a2-google-android.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
 		<key>Assets/HeartEatAnimation</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
+		</dict>
+		<key>Assets/HeartEatAnimation/1.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/2.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/3.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/4.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/5.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/6.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/7.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/HeartEatAnimation/8.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
 		</dict>
 		<key>Assets/Hearts_01_256x256_008@4x.png</key>
 		<dict>
@@ -97,17 +140,23 @@
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
-		<key>Assets/brokenheartLeft.png</key>
+		<key>Assets/TutorialVid</key>
 		<dict>
 			<key>isDirty</key>
 			<true/>
+		</dict>
+		<key>Assets/bluenote.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/brokenheartLeft.png</key>
+		<dict>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
 		<key>Assets/brokenheartRight.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>

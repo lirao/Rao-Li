@@ -55,6 +55,8 @@
     //Preload sfx
     [audio preloadEffect:@"Audio/tampi05.mp3"];
 
+	Utility.pDayCounter++;
+
     _affectionBar = [AffectionBar progressWithDefault];
     _affectionBar.position = _heartSprite.position;
     _affectionBar.anchorPoint = _heartSprite.anchorPoint;
@@ -131,7 +133,6 @@
 
 - (void)endDay
 {
-	Utility.pDayCounter++;
     _gameOver.visible = YES;
 }
 

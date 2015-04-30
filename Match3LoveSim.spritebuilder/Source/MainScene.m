@@ -6,8 +6,12 @@
     CCLabelTTF* _levelCount;
     CCButton* _skipButton;
     CCButton* _plotButton;
+	CCButton* _tutorialEndButton;
 
     PlotNode* _currentPlot;
+
+	PlotNode* _tutorial;
+	CCNode* _content;
 }
 
 - (void)didLoadFromCCB
@@ -18,11 +22,12 @@
 
     self.dayCounter = Utility.pDayCounter;
 
-    if (!Utility.pTutorialPlayed) {
+//    if (!Utility.pTutorialPlayed) {
+		_content.visible = NO;
         _skipButton.visible = YES;
         _currentPlot.visible = YES;
         _plotButton.visible = YES;
-    }
+//    }
 }
 
 - (void)play
@@ -54,7 +59,15 @@
     _skipButton.visible = NO;
     _plotButton.visible = NO;
     _currentPlot.visible = NO;
+	_tutorial.visible = YES;
+	_tutorialEndButton.visible = YES;
 	Utility.pTutorialPlayed = YES;
+}
+-(void)closeTutorial
+{
+	_tutorialEndButton.visible=NO;
+	_tutorial.visible =NO;
+	_content.visible=YES;
 }
 
 - (void)next

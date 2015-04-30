@@ -16,7 +16,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>6</integer>
+	<integer>2</integer>
 	<key>docDimensionsType</key>
 	<integer>1</integer>
 	<key>fileType</key>
@@ -50,12 +50,22 @@
 				<string></string>
 				<key>displayName</key>
 				<string>CCNodeColor</string>
+				<key>hidden</key>
+				<true/>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
 				<array>
+					<dict>
+						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
 					<dict>
 						<key>name</key>
 						<string>name</string>
@@ -137,6 +147,8 @@
 						<real>1</real>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1447,20 +1459,7 @@ that not all gifts are welcome...</string>
 								<key>type</key>
 								<string>Float</string>
 								<key>value</key>
-								<real>0.0</real>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-									<real>0.0</real>
-								</array>
+								<real>1</real>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -2026,7 +2025,20 @@ Position: Senior Combat Trainer
 								<key>type</key>
 								<string>Float</string>
 								<key>value</key>
-								<real>1</real>
+								<real>0.0</real>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>0.0</real>
+								</array>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -2319,7 +2331,20 @@ Position: Senior Combat Trainer
 								<key>type</key>
 								<string>Float</string>
 								<key>value</key>
-								<real>1</real>
+								<real>0.0</real>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>0.0</real>
+								</array>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -2460,7 +2485,7 @@ Position: Senior Combat Trainer
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1.5</real>
+							<real>0.5</real>
 							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -5511,7 +5536,7 @@ Of Combos</string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>1.5</real>
 							<real>0.5</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -5979,8 +6004,6 @@ Of Combos</string>
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -6108,7 +6131,7 @@ Of Combos</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
