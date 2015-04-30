@@ -8,6 +8,7 @@
 
 #import "Orb.h"
 #import "Grid.h"
+#import "Utility.h"
 #define SPRITE_CACHE ([CCSpriteFrameCache sharedSpriteFrameCache])
 
 //Stores the _cellHeight and cellWidth
@@ -50,11 +51,10 @@ static NSString* SPRITE = @"Assets/object_game-power-ups/%@";
         spritePath = [NSString stringWithFormat:SPRITE, @"Star.png"];
         break;
     default:
-        spritePath = [NSString stringWithFormat:SPRITE, @"Mushrooms_01_256x256_Alt_00_001.png"];
+        spritePath = [NSString stringWithFormat:SPRITE, @"Health.png"];
         break;
     }
 
-    // 5) To change image :
     [self setSpriteFrame:[SPRITE_CACHE spriteFrameByName:spritePath]];
 
     self.orbColor = color;
@@ -73,7 +73,7 @@ static NSString* SPRITE = @"Assets/object_game-power-ups/%@";
         self.scaleY = MAX_Y / self.contentSize.height;
 
         self.physicsBody = [CCPhysicsBody bodyWithCircleOfRadius:self.contentSize.width * 0.25 andCenter:ccp(1, 0.5)];
-//        NSLog(@"%@", NSStringFromCGPoint(self.anchorPoint));
+        //        NSLog(@"%@", NSStringFromCGPoint(self.anchorPoint));
         self.physicsBody.collisionType = @"orb";
         self.physicsBody.affectedByGravity = NO;
     }

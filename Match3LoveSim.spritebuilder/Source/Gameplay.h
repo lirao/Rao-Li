@@ -18,4 +18,5 @@
 @property (nonatomic, assign) double score;
 - (void) updateExpression: (MyValue)orbColor;
 - (void) endDay;
+- (void) heartAnimate;
 @end

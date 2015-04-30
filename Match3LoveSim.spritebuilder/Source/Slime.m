@@ -7,6 +7,7 @@
 //
 
 #import "Slime.h"
+#import "Utility.h"
 
 @implementation Slime
 {
@@ -17,5 +18,17 @@
 - (void)didLoadFromCCB
 {
 	_slimeSprite.texture.antialiased=NO;
+}
+
+- (void)stand
+{
+	CCAnimationManager* animationManager = self.animationManager;
+	[animationManager runAnimationsForSequenceNamed:@"stand"];
+}
+
+- (void)spin
+{
+	CCAnimationManager* animationManager = self.animationManager;
+	[animationManager runAnimationsForSequenceNamed:@"spin"];
 }
 @end

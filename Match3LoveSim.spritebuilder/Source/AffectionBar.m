@@ -8,25 +8,15 @@
 
 #import "AffectionBar.h"
 
-static long TOTAL_AFFECTION = 1000;
 @implementation AffectionBar
 
 - (void)setScore:(double)score
 {
+	//Save score to persistent storage
+	[[NSUserDefaults standardUserDefaults] setDouble:score forKey:@"Affection"];
 	self.percentage = score;
 }
 
-//- (void)didLoadFromCCB
-//{
-//	self.sprite = _barSprite;
-//	[self removeChild:_barSprite];
-//	self.type = CCProgressNodeTypeBar;
-//	self.midpoint = ccp(0,0);
-//
-//	//Load the persisted score
-////	NSInteger score = [[NSUserDefaults standardUserDefaults] integerForKey:@"kCumulativeScore"];
-//	self.percentage = 100;
-//}
 + (instancetype)progressWithDefault
 {
     AffectionBar* _affectionBar = [super progressWithSprite:[CCSprite spriteWithImageNamed:@"Assets/heartbar2x.png"]];
@@ -34,7 +24,7 @@ static long TOTAL_AFFECTION = 1000;
     _affectionBar.midpoint = ccp(0, 0);
     _affectionBar.barChangeRate = ccp(1, 0);
     _affectionBar.opacity = 1;
-    _affectionBar.score = 45;
+    _affectionBar.score = [[NSUserDefaults standardUserDefaults] doubleForKey:@"Affection"];
 
     return _affectionBar;
 }

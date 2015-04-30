@@ -10,6 +10,7 @@
 
 @interface Slime : CCNode
 
-	
+- (void)stand;
+- (void)spin;
 
 @end

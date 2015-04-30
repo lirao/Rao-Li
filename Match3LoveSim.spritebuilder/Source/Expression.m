@@ -30,14 +30,14 @@
 
 - (void)didLoadFromCCB
 {
-    _Blist = @{ @(HEAL) : @"(´･_･`)",
+    _Blist = @{ @(HEAL) : @"(=￣ω￣=)",
         @(PTDOWN) : @"∑(￣□￣;)",
         @(PTDOWNSP) : @"(￣皿￣╬)",
         @(NEUTRAL) : @"(￣ㄧ￣ )",
         @(PTUP) : @"ヾ(●゜▽゜●)♡ ",
         @(PTUPSP) : @"Σ>―(〃°ω°〃)♡→" };
 
-    _Alist = @{ @(HEAL) : @"(´・ω・)つ旦",
+    _Alist = @{ @(HEAL) : @"(<ゝω・)☆",
         @(PTDOWN) : @" ( ´ﾟДﾟ`)",
         @(PTDOWNSP) : @"(✘﹏✘ა)",
         @(NEUTRAL) : @"ヽ(✿ﾟ▽ﾟ)ノ",

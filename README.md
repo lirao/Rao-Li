@@ -75,9 +75,10 @@ tsundere slime and megane slime
 	* http://opengameart.org/content/2d-speech-bubbles
 	* Erik Herschend http://www.erikherschend.com/
 	* GameArtForge http://opengameart.org/users/gameartforge
-	* OpenStockProject http://www.openstockproject.com/
+	* OpenStockProject 
 	* Kenny http://kenney.nl/
-	
+	* Simple Icon http://simpleicon.com/
+	* The Android Open Source Project	
 * Audio Assets
 	* TAM Music Factory
 
@@ -145,14 +146,22 @@ tsundere slime and megane slime
 * Make Plot unlock screen (2nd loop)
 * Fix polish animations
 
-* Completed (as of 4/26 Noon)
+* Completed
 	* Implemented time/affection bars
 	* Wrote plot and basic plot screen
 	* Bug: Sometimes, the rightmost 2 horizontal orbs will match just by themselves when there's a high combo
+	* Persisted scores
+	* Small additional animations	
 	 	
 
 
 ### Week 7 (4/28 - 5/2/2014) - _finishing the polish_
-*  Finish up on whatever is left to do
+*  Feedback: add more small animations in addition to emoji change
+	* Great heart up = popup heart
+	* Small heart up = music note
+	* Neutral = Slimes spin...?
+	* Recover energy = eat heart candy
+	* Small heart down = cross vein marks
+	* Great heart down = heart break
 *  Get play testing feedback and change stuff
 *  Prepare pitch

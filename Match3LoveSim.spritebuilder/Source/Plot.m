@@ -7,6 +7,7 @@
 //
 
 #import "Plot.h"
+#import "Utility.h"
 
 @implementation Plot {
     CCNode* _plotIntro;
@@ -19,19 +20,20 @@
     CCNode* _buttonGroup;
     CCButton* _backButton;
     CCButton* _skipButton;
+	
+	CCButton* _buttonH0;
+	CCButton* _buttonH1;
+	CCButton* _buttonH2;
+	CCButton* _buttonH3;
+	CCButton* _buttonH4;
+	CCButton* _buttonH5;
 
     CCNode* _currentPlot;
 }
 
 - (void)didLoadFromCCB
 {
-    //	[self removeChild:_plotIntro];
-    //	[self removeChild:_plotH0];
-    //	[self removeChild:_plotH1];
-    //	[self removeChild:_plotH2];
-    //	[self removeChild:_plotH3];
-    //	[self removeChild:_plotH4];
-    //	[self removeChild:_plotH5];
+	
 }
 
 - (void)loadPlot:(CCNode*)plotNode
@@ -57,19 +59,19 @@
 }
 - (void)heart2
 {
-    [self loadPlot:_plotH2];
+//    [self loadPlot:_plotH2];
 }
 - (void)heart3
 {
-    [self loadPlot:_plotH3];
+//    [self loadPlot:_plotH3];
 }
 - (void)heart4
 {
-    [self loadPlot:_plotH4];
+//    [self loadPlot:_plotH4];
 }
 - (void)heart5
 {
-    [self loadPlot:_plotH5];
+//    [self loadPlot:_plotH5];
 }
 
 - (void)home

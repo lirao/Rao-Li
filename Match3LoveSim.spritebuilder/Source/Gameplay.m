@@ -9,12 +9,12 @@
 #import "Gameplay.h"
 #import "Orb.h"
 #import "Grid.h"
-#import "Level.h"
 #import "Expression.h"
 #import "Slime.h"
 #import "TimeBar.h"
 #import "AffectionBar.h"
 #import "GameOver.h"
+#import "Utility.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay {
@@ -31,6 +31,8 @@
     Expression* _expressionB;
     Slime* _slimeA;
     Slime* _slimeB;
+    CCNode* _popupA;
+    CCNode* _popupB;
 
     TimeBar* _timeBar;
     AffectionBar* _affectionBar;
@@ -38,7 +40,7 @@
     CCSprite* _heartSprite;
     CCSprite* _gradientSprite;
 
-	GameOver* _gameOver;
+    GameOver* _gameOver;
 }
 
 // is called when CCB file has completed loading
@@ -49,21 +51,24 @@
     // access audio object
     OALSimpleAudio* audio = [OALSimpleAudio sharedInstance];
     // play bgm
-    [audio playBg:@"/Resources/Audio/tampi05.mp3" loop:YES];
+    [audio playBg:@"/Audio/tampi05.mp3" loop:YES];
     //Preload sfx
-    [audio preloadEffect:@"/Resources/Audio/tampi05.mp3"];
+    [audio preloadEffect:@"/Audio/tampi05.mp3"];
 
     _affectionBar = [AffectionBar progressWithDefault];
     _affectionBar.position = _heartSprite.position;
     _affectionBar.anchorPoint = _heartSprite.anchorPoint;
     _affectionBar.positionType = _heartSprite.positionType;
     [self addChild:_affectionBar];
+    _affection = _affectionBar.percentage; //Sync up _affection from saved value
 
     _timeBar = [TimeBar progressWithDefault];
     _timeBar.position = _gradientSprite.position;
     _timeBar.anchorPoint = _gradientSprite.anchorPoint;
     _timeBar.positionType = _heartSprite.positionType;
     [self addChild:_timeBar];
+    //Init values;
+    self.life = 100;
 }
 
 - (void)update:(CCTime)delta
@@ -78,6 +83,29 @@
 {
     [_expressionA changeExp:orbColor];
     [_expressionB changeExp:orbColor];
+    switch (orbColor) {
+    case HEAL:
+        [Utility animate:_popupA name:@"eat"];
+        break;
+    case PTDOWN:
+        [Utility animate:_popupB name:@"anger"];
+        break;
+    case PTDOWNSP:
+        [Utility animate:_popupB name:@"heartbreak"];
+        break;
+    case NEUTRAL:
+        [Utility animate:_slimeA name:@"spin"];
+        [Utility animate:_slimeB name:@"spin"];
+        break;
+    case PTUP:
+        [Utility animate:_popupB name:@"musicnote"];
+        break;
+    case PTUPSP:
+        [Utility animate:_popupB name:@"heartup"];
+        break;
+    default:
+        break;
+    }
 }
 
 - (void)setLife:(double)life
@@ -97,12 +125,20 @@
     else if (affection <= 0)
         affection = 0;
     _affection = affection;
-    _affectionBar.percentage = self.affection / 10;
+    _affectionBar.score = self.affection / 10;
 }
 
 - (void)endDay
 {
-	_gameOver.visible = YES;
+    int dayCounter = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DayCounter"];
+    [[NSUserDefaults standardUserDefaults] setInteger:(dayCounter + 1)forKey:@"DayCounter"];
+
+    _gameOver.visible = YES;
+}
+- (void)heartAnimate
+{
+    CCAnimationManager* animationManager = self.animationManager;
+    [animationManager runAnimationsForSequenceNamed:@"heartup"];
 }
 
 - (void)home

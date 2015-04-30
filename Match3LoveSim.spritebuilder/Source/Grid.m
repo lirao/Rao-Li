@@ -8,8 +8,8 @@
 
 #import "Grid.h"
 #import "Orb.h"
-#import "Level.h"
 #import "ScorePopup.h"
+#import "Utility.h"
 
 // these are variables that cannot be changed
 static const int GRID_ROWS = 6;
@@ -28,7 +28,6 @@ static const int GRID_COLUMNS = 6;
     NSMutableArray* _scoreStack;
 
     int _howManyToProcess;
-    Level* _level;
 }
 
 // is called when CCB file has completed loading
@@ -58,12 +57,7 @@ static const int GRID_COLUMNS = 6;
     //pointer to the player-dragged orb
     _dragOrb = nil;
 
-    //init values
-    _gamePlay.affection = 0;
-    _gamePlay.life = 1000;
-    _gamePlay.multiplier = 0;
     [self turnEnd];
-
 }
 
 - (void)setupGrid
@@ -153,7 +147,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            //            NSLog(@"match left, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
+            NSLog(@"match left, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
             [self findMatchesLeftOrb:newOrb index:newIndex];
         }
     }
@@ -170,8 +164,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            //            NSLog(@"match right, color = %d, newColor = %d, index = %d", (int)orb.orbColor, (int)newOrb.orbColor, index);
-            [self findMatchesRightOrb:newOrb index:newIndex];
+            NSLog(@"match right, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
         }
     }
 }
@@ -286,7 +279,7 @@ static const int GRID_COLUMNS = 6;
         [orb runAction:sequence];
     }
     [batches removeObject:batch];
-    float delayInSeconds = 1;
+	float delayInSeconds = 0.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 		[self processBatches:batches];
@@ -308,9 +301,10 @@ static const int GRID_COLUMNS = 6;
     popup.position = ccp(sampleOrb.position.x + _cellWidth / 2, sampleOrb.position.y + _cellHeight / 2);
     popup.opacity = 0;
     [_popupNode addChild:popup];
+    [popup animate];
 
-	//Change expression
-	[_gamePlay updateExpression:sampleOrb.orbColor];
+    //Change expression
+    [_gamePlay updateExpression:sampleOrb.orbColor];
 }
 
 - (void)calculateScore
@@ -319,16 +313,6 @@ static const int GRID_COLUMNS = 6;
 
     //settle up scores
     for (ScorePopup* popup in _scoreStack) {
-        //Fade out first
-        CCActionFadeTo* halfFadeOut = [CCActionFadeTo actionWithDuration:0.5 opacity:0.5];
-        CCActionFadeTo* fadeIn = [CCActionFadeTo actionWithDuration:0.5 opacity:1];
-        CCActionSequence* changeFade = [CCActionSequence actionWithArray:@[ halfFadeOut, fadeIn ]];
-        CCActionRepeat* repeatAction = [CCActionRepeat actionWithAction:changeFade times:3];
-        CCActionDelay* delayLong = [CCActionDelay actionWithDuration:1];
-        CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:1];
-        CCActionSequence* blink = [CCActionSequence actionWithArray:@[ changeFade, fadeOut ]];
-        [popup runAction:blink];
-
         [popup setMultiplier:totalMultiplier];
         long score = (1 + totalMultiplier / 10) * popup.score;
         long scoreDown = (1 - totalMultiplier / 10) * popup.score;
@@ -347,15 +331,17 @@ static const int GRID_COLUMNS = 6;
             break;
         case PTDOWN:
             _gamePlay.affection -= scoreDown;
-            [popup setScore:scoreDown];
+            [popup setScore:-(scoreDown)];
             break;
         case PTDOWNSP:
             _gamePlay.affection -= scoreDown * 2;
-            [popup setScore:scoreDown * 2];
+            [popup setScore:-(scoreDown * 2)];
             break;
         default:
             break;
         }
+
+        [popup animateEnd];
     }
 
     //    for (ScorePopup* popup in _scoreStack) {
@@ -411,10 +397,9 @@ static const int GRID_COLUMNS = 6;
     _dragOffset = CGPointZero;
     [self turnEnd];
 
-	if (_gamePlay.life == 0)
-	{
-		[_gamePlay endDay];
-	}
+    if (_gamePlay.life == 0) {
+        [_gamePlay endDay];
+    }
 }
 
 //Settle up
@@ -445,7 +430,6 @@ static const int GRID_COLUMNS = 6;
         [self processBatches:batches];
     }
     else {
-        [_popupNode runAction:[CCActionDelay actionWithDuration:2.0]];
         [self calculateScore];
         self.userInteractionEnabled = YES;
     }
@@ -466,7 +450,6 @@ static const int GRID_COLUMNS = 6;
         location.x -= _dragOffset.x;
         location.y -= _dragOffset.y;
         [_dragOrb setPosition:location];
-
     }
 }
 
@@ -481,8 +464,8 @@ static const int GRID_COLUMNS = 6;
         [swapOrb setColor:_dragOrb.orbColor];
         _realDragOrb = swapOrb;
 
-		//Minus 1 life for every swap fired
-		_gamePlay.life--;
+        //Minus 1 life for every swap fired
+        _gamePlay.life--;
     }
 
     return NO;

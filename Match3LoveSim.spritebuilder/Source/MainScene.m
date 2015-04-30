@@ -1,12 +1,18 @@
 #import "MainScene.h"
+#import "Utility.h"
 
 @implementation MainScene
+{
+	CCLabelTTF *_levelCount;
+}
 
 - (void)didLoadFromCCB
 {
-//	NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"Save.plist" ofType:@"plist"];
-//	NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
-//	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+	NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"SaveDefaults" ofType:@"plist"];
+	NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+
+	self.dayCounter = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DayCounter"];
 }
 
 - (void)play
@@ -22,13 +28,19 @@
 }
 - (void)credits
 {
-	CCScene* scene = [CCBReader loadAsScene:@"Credits"];
-	[[CCDirector sharedDirector] replaceScene:scene];
+//	CCScene* scene = [CCBReader loadAsScene:@"Credits"];
+//	[[CCDirector sharedDirector] replaceScene:scene];
 }
 
 - (void) home
 {
 	CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
 	[[CCDirector sharedDirector] replaceScene:scene];
+}
+
+- (void) setDayCounter:(int)dayCounter
+{
+	_dayCounter = dayCounter;
+	_levelCount.string = [NSString stringWithFormat:@"%d", _dayCounter];
 }
 @end

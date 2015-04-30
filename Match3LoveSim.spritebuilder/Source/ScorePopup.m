@@ -7,6 +7,7 @@
 //
 
 #import "ScorePopup.h"
+#import "Utility.h"
 
 @implementation ScorePopup {
     CCLabelTTF* _comboLabel;
@@ -34,4 +35,13 @@
 	return action;
 }
 
+-(void)animate
+{
+	[Utility animate:self name:@"Expand"];
+}
+-(void)animateEnd
+{
+	CCAnimationManager* animationManager = self.animationManager;
+	[animationManager runAnimationsForSequenceNamed:@"ExpandEnd"];
+}
 @end

@@ -80,14 +80,31 @@
 		</dict>
 		<key>Assets</key>
 		<dict/>
+		<key>Assets/HeartEatAnimation</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Assets/Hearts_01_256x256_008@4x.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/Sun@4x.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/brokenheartLeft.png</key>
 		<dict>
 			<key>isDirty</key>
 			<true/>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
-		<key>Assets/Sun@4x.png</key>
+		<key>Assets/brokenheartRight.png</key>
 		<dict>
 			<key>isDirty</key>
 			<true/>
@@ -96,24 +113,18 @@
 		</dict>
 		<key>Assets/interface_buttons/buttons-20.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
 		<key>Assets/interface_buttons/buttons-21.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
 		<key>Assets/logo.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
-			<integer>1</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Assets/object_billiard-balls</key>
 		<dict/>
@@ -125,7 +136,75 @@
 			<true/>
 		</dict>
 		<key>Assets/object_game-power-ups/1up.png</key>
-		<dict/>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/2x.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Blast.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Fire.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Health.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Heart.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Ice.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Lightning.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Potion-Blue.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Potion-Green.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Potion-Purple.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Potion-Red.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Shield.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
+		<key>Assets/object_game-power-ups/Star.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>4</integer>
+		</dict>
 		<key>Assets/object_yay-candies</key>
 		<dict/>
 		<key>Assets/slime/Blue</key>

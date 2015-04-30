@@ -11,8 +11,6 @@
 
 @interface Grid : CCNode<CCPhysicsCollisionDelegate>
 
-//@property (nonatomic, assign) int life;
-//@property (nonatomic, assign) int affection;
 @property (nonatomic, strong) Gameplay* gamePlay;
 
 @end

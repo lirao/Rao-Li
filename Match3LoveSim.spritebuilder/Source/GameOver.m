@@ -7,6 +7,7 @@
 //
 
 #import "GameOver.h"
+#import "Utility.h"
 
 @implementation GameOver
 

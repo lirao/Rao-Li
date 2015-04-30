@@ -25,13 +25,18 @@ This is a story about friendship, love, and the importance of combos.
 Red: ヽ(✿ﾟ▽ﾟ)ノ Blue! Do you want this Potion? I 	 beat a Level 15 adventurer and  he paid me this as commission!  
 Blue: (´･_･`)  
 Blue: I don't need potions. I have enough dodge and I hate the taste...  
+Red: Oh... but there's a bunch of other stuff I found too (´・ω・)つ  
+Blue: This is neat! Now I can use Fire magic 
+
 Red: Oh... What about this star candy though? You love them! (●´・ω・‘)  
-Blue: ... Yes I do (*ﾟ∀ﾟ*)     
+Blue: ... Yes I do (*ﾟ∀ﾟ*)  
+Red: I'm going to the heart candy though, these are my favorite (=￣ω￣=)  
+Blue: (=￣ω￣=)  
 
 ## Heart 1: Development 承
 Blue slime leaves on a journey to train. Red chases after Blue   
-Blue: (๑•̀ㅂ•́)و✧ Red, I'm decided to go on special training with the Kung Fu Master to get stronger.  
-Red: But that's really far away, I'm going to miss you...   
+Blue: (๑•̀ㅂ•́)و✧ Red, I've decided to go on special training with the Kung Fu Master to get stronger.  
+Red: But that's really far away, I'm going to miss you...  (｡ŏ_ŏ) 
 Red: (☆_☆) Let me come with you!  
 Blue: (´-ι_-｀) Fine...  
 ## Heart 2: Plot twist 转

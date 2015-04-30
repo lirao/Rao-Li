@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>MaxCombo</key>
-	<string></string>
+	<integer>0</integer>
 	<key>HighScore</key>
-	<string></string>
+	<integer>0</integer>
 	<key>TutorialPlayed</key>
 	<false/>
 	<key>DayCounter</key>

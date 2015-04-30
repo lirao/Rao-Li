@@ -8,7 +8,7 @@
 
 #import "PlotNode.h"
 #import "Plot.h"
-
+#import "Utility.h"
 @implementation PlotNode {
     int _sceneCount;
     int _currScene;
@@ -19,8 +19,9 @@
     _visible = visible;
     if (_visible) {
         _currScene = 0;
-        CCAnimationManager* animationManager = self.animationManager;
-        [animationManager runAnimationsForSequenceNamed:[@(_currScene) stringValue]];
+//        CCAnimationManager* animationManager = self.animationManager;
+//        [animationManager runAnimationsForSequenceNamed:[@(_currScene) stringValue]];
+		[Utility animate:self name:[@(_currScene) stringValue]];
     }
 }
 
@@ -31,8 +32,7 @@
         [(Plot*)self.parent skip];
     }
     else {
-        CCAnimationManager* animationManager = self.animationManager;
-        [animationManager runAnimationsForSequenceNamed:[@(_currScene) stringValue]];
+		[Utility animate:self name:[@(_currScene) stringValue]];
     }
 }
 
