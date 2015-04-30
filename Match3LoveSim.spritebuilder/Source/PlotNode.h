@@ -10,4 +10,5 @@
 
 @interface PlotNode : CCNode
 
+- (int) next;
 @end

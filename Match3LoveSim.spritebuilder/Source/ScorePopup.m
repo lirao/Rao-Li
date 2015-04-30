@@ -41,7 +41,6 @@
 }
 -(void)animateEnd
 {
-	CCAnimationManager* animationManager = self.animationManager;
-	[animationManager runAnimationsForSequenceNamed:@"ExpandEnd"];
+	[Utility animate:self name:@"ExpandEnd"];
 }
 @end

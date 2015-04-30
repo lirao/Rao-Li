@@ -14,26 +14,26 @@
     int _currScene;
 }
 
+//Replay init scene when set to visible
 - (void)setVisible:(BOOL)visible
 {
     _visible = visible;
     if (_visible) {
         _currScene = 0;
-//        CCAnimationManager* animationManager = self.animationManager;
-//        [animationManager runAnimationsForSequenceNamed:[@(_currScene) stringValue]];
 		[Utility animate:self name:[@(_currScene) stringValue]];
     }
 }
 
-- (void)next
+- (int)next
 {
     _currScene++;
     if (_currScene > _sceneCount) {
-        [(Plot*)self.parent skip];
+		return -1;
     }
     else {
 		[Utility animate:self name:[@(_currScene) stringValue]];
     }
+	return _currScene;
 }
 
 @end

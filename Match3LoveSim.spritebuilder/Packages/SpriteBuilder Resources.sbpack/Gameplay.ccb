@@ -278,10 +278,10 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>192</real>
-							<real>192</real>
+							<real>0.5</real>
+							<real>0.0</real>
 							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2152,8 +2152,6 @@
 						<string>AnimateEmo.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -2226,6 +2224,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -2243,7 +2243,7 @@
 			<key>scale</key>
 			<real>1</real>
 			<key>width</key>
-			<integer>384</integer>
+			<integer>320</integer>
 		</dict>
 		<dict>
 			<key>centeredOrigin</key>
@@ -2257,7 +2257,7 @@
 			<key>scale</key>
 			<real>2</real>
 			<key>width</key>
-			<integer>384</integer>
+			<integer>320</integer>
 		</dict>
 	</array>
 	<key>sequences</key>

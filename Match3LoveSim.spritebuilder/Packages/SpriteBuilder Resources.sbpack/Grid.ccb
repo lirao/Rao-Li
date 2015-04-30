@@ -353,7 +353,7 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>384</real>
+					<real>320</real>
 					<real>384</real>
 					<integer>0</integer>
 					<integer>0</integer>
@@ -367,7 +367,7 @@
 				<key>value</key>
 				<array>
 					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>

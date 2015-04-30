@@ -1,5 +1,5 @@
 @interface MainScene : CCNode
 
-@property (nonatomic, assign) int dayCounter;
+@property (nonatomic, assign) long dayCounter;
 
 @end

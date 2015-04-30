@@ -10,10 +10,21 @@
 
 @interface Utility : CCNode
 
-//@property (nonatomic, readwrite) double affection;
-//@property (nonatomic, readwrite) double ;
-//@property (nonatomic, readwrite) double score;
-//@property (nonatomic, readwrite) double score;
++ (double) pHighScore;
++ (void) setPHighScore:(double)val;
+
++ (long) pMaxCombo;
++ (void) setPMaxCombo:(long)val;
+
++ (long) pDayCounter;
++ (void) setPDayCounter:(long)val;
+
++ (double) pAffection;
++ (void) setPAffection:(double)val;
+
++ (BOOL) pTutorialPlayed;
++ (void) setPTutorialPlayed:(BOOL)val;
+
 
 +(void) animate:(CCNode*)node name:(NSString*)name;
 +(void) switchScene:(NSString*)sceneName;

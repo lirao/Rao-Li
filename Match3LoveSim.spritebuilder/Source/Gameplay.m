@@ -51,9 +51,9 @@
     // access audio object
     OALSimpleAudio* audio = [OALSimpleAudio sharedInstance];
     // play bgm
-    [audio playBg:@"/Audio/tampi05.mp3" loop:YES];
+    [audio playBg:@"Audio/tampi05.mp3" loop:YES];
     //Preload sfx
-    [audio preloadEffect:@"/Audio/tampi05.mp3"];
+    [audio preloadEffect:@"Audio/tampi05.mp3"];
 
     _affectionBar = [AffectionBar progressWithDefault];
     _affectionBar.position = _heartSprite.position;
@@ -94,6 +94,7 @@
         [Utility animate:_popupB name:@"heartbreak"];
         break;
     case NEUTRAL:
+		[Utility animate:_popupB name:@"blank"];
         [Utility animate:_slimeA name:@"spin"];
         [Utility animate:_slimeB name:@"spin"];
         break;
@@ -130,16 +131,10 @@
 
 - (void)endDay
 {
-    int dayCounter = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DayCounter"];
-    [[NSUserDefaults standardUserDefaults] setInteger:(dayCounter + 1)forKey:@"DayCounter"];
-
+	Utility.pDayCounter++;
     _gameOver.visible = YES;
 }
-- (void)heartAnimate
-{
-    CCAnimationManager* animationManager = self.animationManager;
-    [animationManager runAnimationsForSequenceNamed:@"heartup"];
-}
+
 
 - (void)home
 {

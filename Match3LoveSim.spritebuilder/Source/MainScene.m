@@ -1,46 +1,69 @@
 #import "MainScene.h"
 #import "Utility.h"
+#import "PlotNode.h"
 
-@implementation MainScene
-{
-	CCLabelTTF *_levelCount;
+@implementation MainScene {
+    CCLabelTTF* _levelCount;
+    CCButton* _skipButton;
+    CCButton* _plotButton;
+
+    PlotNode* _currentPlot;
 }
 
 - (void)didLoadFromCCB
 {
-	NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"SaveDefaults" ofType:@"plist"];
-	NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
-	[[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
+    NSString* defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"SaveDefaults" ofType:@"plist"];
+    NSDictionary* defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
 
-	self.dayCounter = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"DayCounter"];
+    self.dayCounter = Utility.pDayCounter;
+
+    if (!Utility.pTutorialPlayed) {
+        _skipButton.visible = YES;
+        _currentPlot.visible = YES;
+        _plotButton.visible = YES;
+    }
 }
 
 - (void)play
 {
-	// Replaces MainScene with game scene called Gameplay.ccb
-	CCScene* gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
-	[[CCDirector sharedDirector] replaceScene:gameplayScene];
+    [Utility switchScene:@"Gameplay"];
 }
 - (void)plot
 {
-	CCScene* scene = [CCBReader loadAsScene:@"Plot"];
-	[[CCDirector sharedDirector] replaceScene:scene];
+    [Utility switchScene:@"Plot"];
 }
 - (void)credits
 {
-//	CCScene* scene = [CCBReader loadAsScene:@"Credits"];
-//	[[CCDirector sharedDirector] replaceScene:scene];
+    [Utility switchScene:@"Credits"];
 }
 
-- (void) home
+- (void)home
 {
-	CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
-	[[CCDirector sharedDirector] replaceScene:scene];
+    [Utility switchScene:@"MainScene"];
 }
 
-- (void) setDayCounter:(int)dayCounter
+- (void)setDayCounter:(long)dayCounter
 {
-	_dayCounter = dayCounter;
-	_levelCount.string = [NSString stringWithFormat:@"%d", _dayCounter];
+    _dayCounter = dayCounter;
+    _levelCount.string = [NSString stringWithFormat:@"%ld", _dayCounter];
 }
+
+- (void)skip
+{
+    _skipButton.visible = NO;
+    _plotButton.visible = NO;
+    _currentPlot.visible = NO;
+	Utility.pTutorialPlayed = YES;
+}
+
+- (void)next
+{
+    int currScene = [_currentPlot next];
+    //Scene has ended, remove overlay
+    if (currScene == -1) {
+        [self skip];
+    }
+}
+
 @end

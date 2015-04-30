@@ -8,27 +8,30 @@
 
 #import "Plot.h"
 #import "Utility.h"
+#import "PlotNode.h"
 
 @implementation Plot {
-    CCNode* _plotIntro;
-    CCNode* _plotH0;
-    CCNode* _plotH1;
-    CCNode* _plotH2;
-    CCNode* _plotH3;
-    CCNode* _plotH4;
-    CCNode* _plotH5;
+    PlotNode* _plotIntro;
+    PlotNode* _plotH0;
+    PlotNode* _plotH1;
+    PlotNode* _plotH2;
+    PlotNode* _plotH3;
+    PlotNode* _plotH4;
+    PlotNode* _plotH5;
+
     CCNode* _buttonGroup;
-    CCButton* _backButton;
+
+	CCButton* _backButton;
     CCButton* _skipButton;
-	
-	CCButton* _buttonH0;
+	CCButton* _plotButton;
+
 	CCButton* _buttonH1;
 	CCButton* _buttonH2;
 	CCButton* _buttonH3;
 	CCButton* _buttonH4;
 	CCButton* _buttonH5;
 
-    CCNode* _currentPlot;
+    PlotNode* _currentPlot;
 }
 
 - (void)didLoadFromCCB
@@ -36,13 +39,14 @@
 	
 }
 
-- (void)loadPlot:(CCNode*)plotNode
+- (void)loadPlot:(PlotNode*)plotNode
 {
 	_buttonGroup.visible = NO;
     _currentPlot = plotNode;
     _currentPlot.visible = YES;
     _skipButton.visible = YES;
     _backButton.visible = NO;
+	_plotButton.visible = YES;
 }
 
 - (void)intro
@@ -85,8 +89,19 @@
 	_buttonGroup.visible = YES;
 	_backButton.visible = YES;
     _skipButton.visible = NO;
+	_plotButton.visible = NO;
     _currentPlot.visible = NO;
     _currentPlot = nil;
+}
+
+-(void)next
+{
+	int currScene = [_currentPlot next];
+	//Scene has ended, remove overlay
+	if (currScene == -1)
+	{
+		[self skip];
+	}
 }
 
 @end

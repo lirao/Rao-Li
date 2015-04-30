@@ -13,7 +13,7 @@
 
 // these are variables that cannot be changed
 static const int GRID_ROWS = 6;
-static const int GRID_COLUMNS = 6;
+static const int GRID_COLUMNS = 5;
 
 @implementation Grid {
     CCPhysicsNode* _physicsNode;
@@ -81,13 +81,8 @@ static const int GRID_COLUMNS = 6;
             orb.position = ccp(x, y);
             [_physicsNode addChild:orb];
 
-            // this is shorthand to access an array inside an array
             int index = i * GRID_COLUMNS + j;
             _gridArray[index] = orb;
-
-            // make creatures visible to test this method, remove this once we know we
-            // have filled the grid properly
-            // creature.isAlive = YES;
 
             x += _cellWidth;
         }
@@ -147,7 +142,7 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            NSLog(@"match left, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
+//            NSLog(@"match left, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
             [self findMatchesLeftOrb:newOrb index:newIndex];
         }
     }
@@ -164,7 +159,8 @@ static const int GRID_COLUMNS = 6;
         Orb* newOrb = _gridArray[newIndex];
         if (newOrb.orbColor == orb.orbColor) {
             [_clearStrip addObject:orb];
-            NSLog(@"match right, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
+//            NSLog(@"match right, index = %d, nextIndex = %d, x-coord = %d, size = %lu", index, newIndex, x, [_clearStrip count]);
+			[self findMatchesRightOrb:newOrb index:newIndex];
         }
     }
 }
@@ -228,10 +224,10 @@ static const int GRID_COLUMNS = 6;
         [_gridArray replaceObjectAtIndex:index withObject:newOrb];
         [_physicsNode removeChild:orb];
     }
-    [self updateOrbPositionsAfterSwap:0.5];
+    [self fallDownOrbs:0.5];
 }
 
-- (void)updateOrbPositionsAfterSwap:(float)duration
+- (void)fallDownOrbs:(float)duration
 {
     float x = 0;
     float y = 0;
@@ -279,7 +275,7 @@ static const int GRID_COLUMNS = 6;
         [orb runAction:sequence];
     }
     [batches removeObject:batch];
-	float delayInSeconds = 0.5;
+	float delayInSeconds = 1;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
 		[self processBatches:batches];
@@ -455,8 +451,8 @@ static const int GRID_COLUMNS = 6;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair dragOrb:(Orb*)dragOrb orb:(Orb*)orb
 {
-    NSLog(@"%@", dragOrb.physicsBody.collisionType);
-    NSLog(@"%@", orb.physicsBody.collisionType);
+//    NSLog(@"%@", dragOrb.physicsBody.collisionType);
+//    NSLog(@"%@", orb.physicsBody.collisionType);
     if (_dragOrb) {
         //Find the orb that it swapped with
         Orb* swapOrb = orb;

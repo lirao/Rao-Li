@@ -7,13 +7,14 @@
 //
 
 #import "AffectionBar.h"
+#import "Utility.h"
 
 @implementation AffectionBar
 
 - (void)setScore:(double)score
 {
 	//Save score to persistent storage
-	[[NSUserDefaults standardUserDefaults] setDouble:score forKey:@"Affection"];
+	Utility.pAffection = score;
 	self.percentage = score;
 }
 
@@ -24,7 +25,7 @@
     _affectionBar.midpoint = ccp(0, 0);
     _affectionBar.barChangeRate = ccp(1, 0);
     _affectionBar.opacity = 1;
-    _affectionBar.score = [[NSUserDefaults standardUserDefaults] doubleForKey:@"Affection"];
+    _affectionBar.score = Utility.pAffection;
 
     return _affectionBar;
 }
