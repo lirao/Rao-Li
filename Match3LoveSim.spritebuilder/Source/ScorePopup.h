@@ -11,7 +11,7 @@
 
 @interface ScorePopup : CCNode
 
-@property (nonatomic, assign) int multiplier;
+@property (nonatomic, assign) long multiplier;
 @property (nonatomic, assign) double score;
 @property (nonatomic, assign) MyValue orbColor;
 - (void) animate;

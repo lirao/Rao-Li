@@ -135,16 +135,18 @@
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
+		<key>Assets/OtherChars</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>Assets/Sun@4x.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
 		<key>Assets/TutorialVid</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>Assets/bluenote.png</key>
 		<dict>
 			<key>scaleFrom</key>
@@ -175,10 +177,11 @@
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
-		<key>Assets/object_billiard-balls</key>
-		<dict/>
 		<key>Assets/object_coloful-mushrooms</key>
-		<dict/>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+		</dict>
 		<key>Assets/object_game-power-ups</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
@@ -254,7 +257,7 @@
 			<key>scaleFrom</key>
 			<integer>4</integer>
 		</dict>
-		<key>Assets/object_yay-candies</key>
+		<key>Assets/slime</key>
 		<dict/>
 		<key>Assets/slime/Blue</key>
 		<dict>
@@ -360,6 +363,11 @@
 		<dict>
 			<key>scaleFrom</key>
 			<integer>1</integer>
+		</dict>
+		<key>Assets/speech_bubble</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
 		</dict>
 		<key>Sprites</key>
 		<dict/>

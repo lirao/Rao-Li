@@ -14,10 +14,10 @@
     CCLabelTTF* _label;
 }
 
-- (void)setMultiplier:(int)value
+- (void)setMultiplier:(long)value
 {
     _multiplier = value;
-    _comboLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
+    _comboLabel.string = [NSString stringWithFormat:@"%ldX", _multiplier];
 }
 
 - (void)setScore:(double)value

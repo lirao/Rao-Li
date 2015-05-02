@@ -43,7 +43,7 @@ tsundere slime and megane slime
 ### Controls/Input
 * 6x6 grid that fill the bottom part of the screen
 * Slide finger to move a single orb around. 
-	* upon collision with another orb, the blob will swap places with the another orb
+	* upon collision with another o	rb, the blob will swap places with the another orb
 	* Movement action does not end until finger leave the screen, so long combos are possible.
 	* Orb clearing and collapse is only done after finger leave screen 
 

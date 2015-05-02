@@ -291,7 +291,7 @@ static const int GRID_COLUMNS = 5;
     //save scoring info
     Orb* sampleOrb = (Orb*)orbs[0];
     popup.orbColor = sampleOrb.orbColor;
-    int score = orbs.count;
+    long score = orbs.count;
 
     switch (popup.orbColor) {
     case PTUPSP:
@@ -311,7 +311,7 @@ static const int GRID_COLUMNS = 5;
     }
 
     [popup setScore:score];
-    [popup setMultiplier:(int)_scoreStack.count];
+    [popup setMultiplier: _scoreStack.count];
 
     popup.position = ccp(sampleOrb.position.x + _cellWidth / 2, sampleOrb.position.y + _cellHeight / 2);
     popup.opacity = 0;

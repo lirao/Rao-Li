@@ -73,13 +73,6 @@
     self.life = 100;
 }
 
-- (void)update:(CCTime)delta
-{
-    //	_lifeLabel.string = [NSString stringWithFormat:@"%.f", _life];
-    //	_affectionLabel.string = [NSString stringWithFormat:@"%.f", _affection];
-    //	_affectionLabel.string = [NSString stringWithFormat:@"%dX", _multiplier];
-    //	_affectionLabel.string = [NSString stringWithFormat:@"%f", _score];
-}
 
 - (void)updateExpression:(MyValue)orbColor
 {
@@ -123,8 +116,8 @@
 
 - (void)setAffection:(double)affection
 {
-    if (affection > 1000)
-        affection = 1000;
+    if (affection > 100)
+        affection = 100;
     else if (affection <= 0)
         affection = 0;
     _affection = affection;
