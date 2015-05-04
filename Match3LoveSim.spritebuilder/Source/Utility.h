@@ -22,10 +22,19 @@
 + (double) pAffection;
 + (void) setPAffection:(double)val;
 
++ (double) pEnergy;
++ (void) setPEnergy:(double)val;
+
++ (BOOL) pHighlightPlot;
++ (void) setPHighlightPlot:(BOOL)val;
+
 + (BOOL) pTutorialPlayed;
 + (void) setPTutorialPlayed:(BOOL)val;
 
++ (long) pUnlockedSceneCount;
++ (void) setPUnlockedSceneCount:(long)val;
 
-+(void) animate:(CCNode*)node name:(NSString*)name;
-+(void) switchScene:(NSString*)sceneName;
++ (void) animate:(CCNode*)node name:(NSString*)name;
++ (void) switchScene:(NSString*)sceneName;
+
 @end

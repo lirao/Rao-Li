@@ -10,11 +10,33 @@
 #import "Utility.h"
 
 @implementation GameOver
+{
+	CCButton* _button;
+}
+
+-(void)didLoadFromCCB
+{
+	if (Utility.pHighlightPlot)
+	{
+		_button.label.string = @"Continue";
+	}
+	else
+	{
+		_button.label.string = @"Replay?";
+	}
+}
+
 
 - (void) home
 {
-	CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
-	[[CCDirector sharedDirector] replaceScene:scene];
+	if (Utility.pHighlightPlot)
+	{
+		[Utility switchScene:@"MainScene"];
+	}
+	else
+	{
+		[Utility switchScene:@"Gameplay"];
+	}
 }
 
 @end

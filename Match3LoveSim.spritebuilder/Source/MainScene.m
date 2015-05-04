@@ -1,17 +1,19 @@
 #import "MainScene.h"
 #import "Utility.h"
 #import "PlotNode.h"
+#import "TutorialNode.h"
 
 @implementation MainScene {
     CCLabelTTF* _levelCount;
     CCButton* _skipButton;
     CCButton* _plotButton;
-	CCButton* _tutorialEndButton;
+    CCButton* _tutorialEndButton;
 
     PlotNode* _currentPlot;
+    TutorialNode* _tutorial;
 
-	PlotNode* _tutorial;
-	CCNode* _content;
+    CCNode* _content;
+	CCNode* _plotHighlight;
 }
 
 - (void)didLoadFromCCB
@@ -22,12 +24,13 @@
 
     self.dayCounter = Utility.pDayCounter;
 
-//    if (!Utility.pTutorialPlayed) {
-		_content.visible = NO;
+	_plotHighlight.visible = Utility.pHighlightPlot;
+    if (!Utility.pTutorialPlayed) {
+        _content.visible = NO;
         _skipButton.visible = YES;
         _currentPlot.visible = YES;
         _plotButton.visible = YES;
-//    }
+    }
 }
 
 - (void)play
@@ -40,6 +43,7 @@
 }
 - (void)credits
 {
+	Utility.pUnlockedSceneCount=5;
     [Utility switchScene:@"Credits"];
 }
 
@@ -59,23 +63,31 @@
     _skipButton.visible = NO;
     _plotButton.visible = NO;
     _currentPlot.visible = NO;
-	_tutorial.visible = YES;
-	_tutorialEndButton.visible = YES;
-	Utility.pTutorialPlayed = YES;
+    _tutorial.visible = YES;
+    _tutorialEndButton.visible = YES;
+    Utility.pTutorialPlayed = YES;
 }
--(void)closeTutorial
+
+- (void)closeTutorial
 {
-	_tutorialEndButton.visible=NO;
-	_tutorial.visible =NO;
-	_content.visible=YES;
+    _tutorialEndButton.visible = NO;
+    _tutorial.visible = NO;
+    _content.visible = YES;
 }
 
 - (void)next
 {
-    int currScene = [_currentPlot next];
-    //Scene has ended, remove overlay
-    if (currScene == -1) {
-        [self skip];
+    if (!_tutorial.visible) {
+        int currScene = [_currentPlot next];
+        //Scene has ended, remove overlay
+        if (currScene == -1)
+            [self skip];
+    }
+    else {
+        int currScene = [_tutorial next];
+        //Scene has ended, remove overlay
+        if (currScene == -1)
+            [self closeTutorial];
     }
 }
 

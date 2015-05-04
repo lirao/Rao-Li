@@ -7,11 +7,14 @@
 //
 
 #import "TimeBar.h"
+#import "Utility.h"
 
 @implementation TimeBar
 
 - (void)setScore:(double)score
 {
+	//Save time to persistent storage so that saves can be continued
+	Utility.pEnergy = score;
 	self.percentage = score;
 }
 
@@ -22,7 +25,7 @@
 	_timeBar.midpoint = ccp(0, 0);
 	_timeBar.barChangeRate = ccp(1, 0);
 	_timeBar.opacity = 1;
-	_timeBar.score = 100;
+	_timeBar.score = Utility.pEnergy;
 
 	return _timeBar;
 }

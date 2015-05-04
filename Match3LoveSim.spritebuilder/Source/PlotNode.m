@@ -10,8 +10,7 @@
 #import "Plot.h"
 #import "Utility.h"
 @implementation PlotNode {
-    int _sceneCount;
-    int _currScene;
+
 }
 
 //Replay init scene when set to visible
@@ -21,7 +20,9 @@
     if (_visible) {
         _currScene = 0;
 		[Utility animate:self name:[@(_currScene) stringValue]];
-    }
+	}
+
+
 }
 
 - (int)next

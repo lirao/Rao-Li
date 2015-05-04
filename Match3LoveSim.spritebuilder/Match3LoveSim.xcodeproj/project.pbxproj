@@ -18,8 +18,13 @@
 		2C6916AF1AED8DEB002AB0A3 /* PlotNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6916AE1AED8DEB002AB0A3 /* PlotNode.m */; };
 		2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF591ADB56B800781050 /* Slime.m */; };
 		2CB6FF5F1ADB570C00781050 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6FF5E1ADB570C00781050 /* Expression.m */; };
+		2CD715431AF4B2E40058A003 /* TutorialNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD715421AF4B2E40058A003 /* TutorialNode.m */; };
+		2CD715491AF4BF870058A003 /* Tutorial.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2CD715451AF4BF870058A003 /* Tutorial.mp4 */; };
+		2CD7154A1AF4BF870058A003 /* icedown2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CD715461AF4BF870058A003 /* icedown2.mp3 */; };
+		2CD7154B1AF4BF870058A003 /* tamhe01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CD715471AF4BF870058A003 /* tamhe01.mp3 */; };
+		2CD7154C1AF4BF870058A003 /* tampi05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CD715481AF4BF870058A003 /* tampi05.mp3 */; };
+		2CD715A81AF52A2B0058A003 /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD715A71AF52A2B0058A003 /* Credits.m */; };
 		2CDF6A3C1AF2852300395244 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF6A3B1AF2852300395244 /* Utility.m */; };
-		2CDF6A3F1AF4242400395244 /* TutorialNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF6A3E1AF4242400395244 /* TutorialNode.m */; };
 		2CDF6A411AF4332800395244 /* SaveDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF6A401AF4332700395244 /* SaveDefaults.plist */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -113,10 +118,16 @@
 		2CB6FF591ADB56B800781050 /* Slime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Slime.m; path = Source/Slime.m; sourceTree = "<group>"; };
 		2CB6FF5D1ADB570C00781050 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = Source/Expression.h; sourceTree = "<group>"; };
 		2CB6FF5E1ADB570C00781050 /* Expression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expression.m; path = Source/Expression.m; sourceTree = "<group>"; };
+		2CD715411AF4B2E40058A003 /* TutorialNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialNode.h; path = Source/TutorialNode.h; sourceTree = "<group>"; };
+		2CD715421AF4B2E40058A003 /* TutorialNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialNode.m; path = Source/TutorialNode.m; sourceTree = "<group>"; };
+		2CD715451AF4BF870058A003 /* Tutorial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tutorial.mp4; sourceTree = "<group>"; };
+		2CD715461AF4BF870058A003 /* icedown2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = icedown2.mp3; sourceTree = "<group>"; };
+		2CD715471AF4BF870058A003 /* tamhe01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tamhe01.mp3; sourceTree = "<group>"; };
+		2CD715481AF4BF870058A003 /* tampi05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tampi05.mp3; sourceTree = "<group>"; };
+		2CD715A61AF52A2B0058A003 /* Credits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Credits.h; path = Source/Credits.h; sourceTree = "<group>"; };
+		2CD715A71AF52A2B0058A003 /* Credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Credits.m; path = Source/Credits.m; sourceTree = "<group>"; };
 		2CDF6A3A1AF2852200395244 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Source/Utility.h; sourceTree = "<group>"; };
 		2CDF6A3B1AF2852300395244 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utility.m; path = Source/Utility.m; sourceTree = "<group>"; };
-		2CDF6A3D1AF4242300395244 /* TutorialNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialNode.h; path = Source/TutorialNode.h; sourceTree = "<group>"; };
-		2CDF6A3E1AF4242400395244 /* TutorialNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialNode.m; path = Source/TutorialNode.m; sourceTree = "<group>"; };
 		2CDF6A401AF4332700395244 /* SaveDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SaveDefaults.plist; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -204,6 +215,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CD715441AF4BF870058A003 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				2CD715451AF4BF870058A003 /* Tutorial.mp4 */,
+				2CD715461AF4BF870058A003 /* icedown2.mp3 */,
+				2CD715471AF4BF870058A003 /* tamhe01.mp3 */,
+				2CD715481AF4BF870058A003 /* tampi05.mp3 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		5B12100D197483EE004C1E1D /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,8 +394,6 @@
 				2C69169E1AE6E38C002AB0A3 /* ScorePopup.m */,
 				2C69169F1AE6E38C002AB0A3 /* ScorePopup.h */,
 				2C6916981AE583C5002AB0A3 /* TimeBar.h */,
-				2CDF6A3D1AF4242300395244 /* TutorialNode.h */,
-				2CDF6A3E1AF4242400395244 /* TutorialNode.m */,
 				2C6916991AE583C6002AB0A3 /* TimeBar.m */,
 				2C0627321A9BA1AD00A46FFA /* Orb.h */,
 				2C0627331A9BA1AD00A46FFA /* Orb.m */,
@@ -395,8 +415,12 @@
 				2C6916A81AED6532002AB0A3 /* Plot.m */,
 				2C6916AD1AED8DEB002AB0A3 /* PlotNode.h */,
 				2C6916AE1AED8DEB002AB0A3 /* PlotNode.m */,
+				2CD715411AF4B2E40058A003 /* TutorialNode.h */,
+				2CD715421AF4B2E40058A003 /* TutorialNode.m */,
 				2CDF6A3A1AF2852200395244 /* Utility.h */,
 				2CDF6A3B1AF2852300395244 /* Utility.m */,
+				2CD715A61AF52A2B0058A003 /* Credits.h */,
+				2CD715A71AF52A2B0058A003 /* Credits.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -473,6 +497,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CD715441AF4BF870058A003 /* Media */,
 				2CDF6A401AF4332700395244 /* SaveDefaults.plist */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
@@ -601,8 +626,10 @@
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
+				2CD7154C1AF4BF870058A003 /* tampi05.mp3 in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
+				2CD7154A1AF4BF870058A003 /* icedown2.mp3 in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
@@ -611,6 +638,8 @@
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
+				2CD7154B1AF4BF870058A003 /* tamhe01.mp3 in Resources */,
+				2CD715491AF4BF870058A003 /* Tutorial.mp4 in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,11 +685,12 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				2C0627111A9AB4E400A46FFA /* Gameplay.m in Sources */,
 				2C6916A91AED6532002AB0A3 /* Plot.m in Sources */,
-				2CDF6A3F1AF4242400395244 /* TutorialNode.m in Sources */,
+				2CD715431AF4B2E40058A003 /* TutorialNode.m in Sources */,
 				2C6916AF1AED8DEB002AB0A3 /* PlotNode.m in Sources */,
 				2C0627311A9BA12D00A46FFA /* Grid.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2CB6FF5A1ADB56B800781050 /* Slime.m in Sources */,
+				2CD715A81AF52A2B0058A003 /* Credits.m in Sources */,
 				2CDF6A3C1AF2852300395244 /* Utility.m in Sources */,
 				2C6916A31AEC1DD1002AB0A3 /* AffectionBar.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,

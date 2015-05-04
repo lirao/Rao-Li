@@ -10,5 +10,8 @@
 
 @interface PlotNode : CCNode
 
+@property (nonatomic, readwrite) int currScene;
+@property (nonatomic, readwrite) int sceneCount;
+
 - (int) next;
 @end

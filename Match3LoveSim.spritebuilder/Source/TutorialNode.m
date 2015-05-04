@@ -7,33 +7,55 @@
 //
 
 #import "TutorialNode.h"
-@import MediaPlayer;
+//@import MediaPlayer;
+#import "Utility.h"
 
 @implementation TutorialNode
 {
-	CCNode* _videoNode;
+	CCNode* _textNode;
 	
 }
+
 - (void)setVisible:(BOOL)visible
 {
 	[super setVisible:visible];
 
-	NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"Movie" ofType:@"mov"];
-	NSURL *streamURL = [NSURL fileURLWithPath:videoPath];
-	MPMoviePlayerController *moviplayer =[[MPMoviePlayerController alloc] initWithContentURL:streamURL];
-	[moviplayer prepareToPlay];
-	[moviplayer.view setFrame: _videoNode.boundingBox];
-
-	[[[CCDirector sharedDirector] view] addSubview:moviplayer.view];
-
-	moviplayer.shouldAutoplay = YES;
-	moviplayer.repeatMode = MPMovieRepeatModeOne;
-	moviplayer.movieSourceType = MPMovieSourceTypeFile;
-	[moviplayer play];
-
-
+//	if (visible)
+//	{
+//	NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"Tutorial" ofType:@"mp4"];
+//	NSURL *streamURL = [NSURL fileURLWithPath:videoPath];
+//	MPMoviePlayerController *moviplayer =[[MPMoviePlayerController alloc] initWithContentURL:streamURL];
+//	[moviplayer prepareToPlay];
+//	[moviplayer.view setFrame: _videoNode.boundingBox];
+//
+//	[[[CCDirector sharedDirector] view] addSubview:moviplayer.view];
+//
+//	UIView* glView = [CCDirector sharedDirector].view; // attention
+//	[glView.superview insertSubview:moviplayer.view atIndex:0]; // attention
+//	glView.opaque = NO; // attention
+//	glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // attention
+//
+//	moviplayer.shouldAutoplay = YES;
+//	moviplayer.repeatMode = MPMovieRepeatModeOne;
+//	moviplayer.controlStyle = MPMovieControlStyleNone;
+//	moviplayer.movieSourceType = MPMovieSourceTypeFile;
+//
+//		[moviplayer play];
+//	}
 
 }
 
+
+- (int)next
+{
+	super.currScene++;
+	if (super.currScene > super.sceneCount) {
+		return -1;
+	}
+	else {
+		[Utility animate:_textNode name:[@(super.currScene) stringValue]];
+	}
+	return super.currScene;
+}
 
 @end

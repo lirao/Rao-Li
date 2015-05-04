@@ -21,17 +21,26 @@ Perpetually hyper slime that almost always have a happy expression on top of its
 
 This is a story about friendship, love, and the importance of combos.
 
+## Tutorial Text
+
+
 ## Heart 0: Introducing Conflict 起
 Red: ヽ(✿ﾟ▽ﾟ)ノ Blue! Do you want this Potion? I 	 beat a Level 15 adventurer and  he paid me this as commission!  
 Blue: (´･_･`)  
 Blue: I don't need potions. I have enough dodge and I hate the taste...  
 Red: Oh... but there's a bunch of other stuff I found too (´・ω・)つ  
-Blue: This is neat! Now I can use Fire magic 
-
-Red: Oh... What about this star candy though? You love them! (●´・ω・‘)  
-Blue: ... Yes I do (*ﾟ∀ﾟ*)  
-Red: I'm going to the heart candy though, these are my favorite (=￣ω￣=)  
+Blue: Fire magic in a orb? Neat! Now I can use Fire too~    
+Blue: (Thinking) [Like you]    
+Blue: Ice is less useful though. I can't really store it safely together with the Fire orbs.   
+Blue: Σ( ° △ °|||)︴A shield?!!!   
+Trauma ... trigger... (ｏдｏlll)  
+Red: I'm so sorry I forgot about your shield incident!  
+What about this star candy though? You always loved them! (●´・ω・‘)  
+Blue: ... Yes I do (*￣(エ)￣)   
+Thank you. I feel so much better now ╰(￣▽￣)╮  
+Red: Phew! I'm going to eat this heart candy though, these are my favorite (=￣ω￣=)  
 Blue: (=￣ω￣=)  
+
 
 ## Heart 1: Development 承
 Blue slime leaves on a journey to train. Red chases after Blue   

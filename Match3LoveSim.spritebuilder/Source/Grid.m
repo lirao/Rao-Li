@@ -326,6 +326,8 @@ static const int GRID_COLUMNS = 5;
 {
     double totalMultiplier = (double)_scoreStack.count;
 
+	if (totalMultiplier>Utility.pMaxCombo)
+		Utility.pMaxCombo=totalMultiplier;
     //settle up scores
     for (ScorePopup* popup in _scoreStack) {
         [popup setMultiplier:totalMultiplier];
@@ -338,12 +340,12 @@ static const int GRID_COLUMNS = 5;
             break;
         case PTUP:
         case PTUPSP:
-            _gamePlay.affection += score;
+            _gamePlay.affection += score/10;
             [popup setScore:score];
             break;
         case PTDOWN:
         case PTDOWNSP:
-            _gamePlay.affection += scoreDown;
+            _gamePlay.affection += scoreDown/10;
             [popup setScore:scoreDown];
             break;
         default:
@@ -353,14 +355,6 @@ static const int GRID_COLUMNS = 5;
         [popup animateEnd];
     }
 
-    //    for (ScorePopup* popup in _scoreStack) {
-    //        CCActionFadeOut* fadeOut = [CCActionFadeOut actionWithDuration:1];
-    //        CCActionDelay* delay = [CCActionDelay actionWithDuration:0.5];
-    //        CCActionSequence* outFade = [CCActionSequence actionWithArray:@[ delay, fadeOut ]];
-    //        [popup runAction:outFade];
-    //    }
-    //
-    //    _gamePlay.multiplier++;
 }
 
 - (void)touchBegan:(CCTouch*)touch withEvent:(CCTouchEvent*)event

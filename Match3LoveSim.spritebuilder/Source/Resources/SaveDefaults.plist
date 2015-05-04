@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>HighlightPlot</key>
+	<true/>
 	<key>MaxCombo</key>
+	<integer>0</integer>
+	<key>UnlockedSceneCount</key>
 	<integer>0</integer>
 	<key>HighScore</key>
 	<integer>0</integer>
@@ -11,6 +15,8 @@
 	<key>DayCounter</key>
 	<integer>0</integer>
 	<key>Affection</key>
+	<integer>0</integer>
+	<key>Energy</key>
 	<integer>0</integer>
 </dict>
 </plist>

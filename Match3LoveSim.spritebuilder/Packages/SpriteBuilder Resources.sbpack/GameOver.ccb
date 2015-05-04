@@ -159,7 +159,7 @@
 				<key>displayName</key>
 				<string>CCButtonBack</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_button</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -262,7 +262,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Continue</string>
+							<string>Replay?</string>
 							<false/>
 						</array>
 					</dict>
@@ -472,6 +472,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

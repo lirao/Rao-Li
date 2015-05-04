@@ -9,6 +9,7 @@
 #import "Plot.h"
 #import "Utility.h"
 #import "PlotNode.h"
+#import "TutorialNode.h"
 
 @implementation Plot {
     PlotNode* _plotIntro;
@@ -18,6 +19,7 @@
     PlotNode* _plotH3;
     PlotNode* _plotH4;
     PlotNode* _plotH5;
+	TutorialNode* _plotTutorial;
 
     CCNode* _buttonGroup;
 
@@ -25,6 +27,7 @@
     CCButton* _skipButton;
 	CCButton* _plotButton;
 
+	CCButton* _buttonH0;
 	CCButton* _buttonH1;
 	CCButton* _buttonH2;
 	CCButton* _buttonH3;
@@ -32,11 +35,28 @@
 	CCButton* _buttonH5;
 
     PlotNode* _currentPlot;
+
 }
 
 - (void)didLoadFromCCB
 {
-	
+	NSArray* buttonArray = [NSArray arrayWithObjects: _buttonH0, _buttonH1, _buttonH2, _buttonH2,_buttonH3,_buttonH4, _buttonH5,nil];
+	long unlockCount = Utility.pUnlockedSceneCount;
+
+	for (int i=0; i<7;i++)
+	{
+		CCButton* button = buttonArray[i];
+		if (unlockCount >= i)
+		{
+			button.enabled=YES;
+		}
+		else
+		{
+			button.enabled=NO;
+		}
+	}
+
+	Utility.pHighlightPlot = NO;
 }
 
 - (void)loadPlot:(PlotNode*)plotNode
@@ -53,6 +73,11 @@
 {
     [self loadPlot:_plotIntro];
 }
+- (void)tutorial
+{
+	[self loadPlot:_plotTutorial];
+}
+
 - (void)heart0
 {
     [self loadPlot:_plotH0];
@@ -63,27 +88,27 @@
 }
 - (void)heart2
 {
-//    [self loadPlot:_plotH2];
+    [self loadPlot:_plotH2];
 }
 - (void)heart3
 {
-//    [self loadPlot:_plotH3];
+    [self loadPlot:_plotH3];
 }
 - (void)heart4
 {
-//    [self loadPlot:_plotH4];
+    [self loadPlot:_plotH4];
 }
 - (void)heart5
 {
-//    [self loadPlot:_plotH5];
+    [self loadPlot:_plotH5];
 }
+
+
 
 - (void)home
 {
-    CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+	[Utility switchScene:@"MainScene"];
 }
-
 - (void)skip
 {
 	_buttonGroup.visible = YES;

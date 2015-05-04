@@ -116,22 +116,23 @@
 
 - (void)setAffection:(double)affection
 {
-    if (affection > 100)
-        affection = 100;
-    else if (affection <= 0)
+    if (affection <= 0)
         affection = 0;
     _affection = affection;
-    _affectionBar.score = self.affection / 10;
+    _affectionBar.score = self.affection;
 }
 
 - (void)endDay
 {
+	//Reset score
+	Utility.pAffection = 0;
     _gameOver.visible = YES;
 }
 
 
 - (void)home
 {
+	Utility.pAffection = 0;
     CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
 }

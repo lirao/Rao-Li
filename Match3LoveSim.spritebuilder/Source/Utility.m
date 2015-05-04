@@ -62,6 +62,27 @@
     [[NSUserDefaults standardUserDefaults] setDouble:val forKey:@"Affection"];
 }
 
++ (double) pEnergy
+{
+	return [[NSUserDefaults standardUserDefaults] doubleForKey:@"Energy"];
+}
+
++ (void) setPEnergy:(double)val
+{
+	[[NSUserDefaults standardUserDefaults] setDouble:val forKey:@"Energy"];
+}
+
+
++ (BOOL)pHighlightPlot
+{
+	return [[NSUserDefaults standardUserDefaults] boolForKey:@"HighlightPlot"];
+}
+
++ (void)setPHighlightPlot:(BOOL)val
+{
+	[[NSUserDefaults standardUserDefaults] setBool:val forKey:@"HighlightPlot"];
+}
+
 + (BOOL)pTutorialPlayed
 {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"TutorialPlayed"];
@@ -70,6 +91,15 @@
 + (void)setPTutorialPlayed:(BOOL)val
 {
     [[NSUserDefaults standardUserDefaults] setBool:val forKey:@"TutorialPlayed"];
+}
+
++ (long)pUnlockedSceneCount
+{
+	return [[NSUserDefaults standardUserDefaults] integerForKey:@"UnlockedSceneCount"];
+}
++ (void) setPUnlockedSceneCount:(long)val;
+{
+	[[NSUserDefaults standardUserDefaults] setInteger:val forKey:@"UnlockedSceneCount"];
 }
 
 @end

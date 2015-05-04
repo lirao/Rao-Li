@@ -13,8 +13,19 @@
 
 - (void)setScore:(double)score
 {
-	//Save score to persistent storage
+	//Save score to persistent storage so that saves can be continued
 	Utility.pAffection = score;
+	if (score> Utility.pHighScore)
+		Utility.pHighScore=score;
+
+	//Check if end affection is high enough to unlock stuff
+	long currentUnlock = score/20;
+	if (Utility.pUnlockedSceneCount<currentUnlock)
+	{
+		Utility.pUnlockedSceneCount=currentUnlock;
+		Utility.pHighlightPlot = YES;
+	}
+
 	self.percentage = score;
 }
 
@@ -25,6 +36,7 @@
     _affectionBar.midpoint = ccp(0, 0);
     _affectionBar.barChangeRate = ccp(1, 0);
     _affectionBar.opacity = 1;
+	//Continue the last play session
     _affectionBar.score = Utility.pAffection;
 
     return _affectionBar;
